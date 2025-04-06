@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+:root {
+    --main: hsl(0, 0%, 90%);
+    --second: hsl(0, 0%, 90%);
+    --third: hsl(0, 0%, 90%);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+    --main: hsl(50, 70%, 21%);
+    --second: hsl(0, 0%, 90%);
+    --third: hsl(0, 0%, 90%);
+    }
+}
+
+body {
+    background-color: var(--main);
+}

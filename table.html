@@ -2,377 +2,971 @@
     <head>
         <title>NYC MOVIES</title>
         <meta charset="UTF-8">
-        <meta namd="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="../src/styles/output.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="styles/style.css" rel="stylesheet">
     </head>
-    <body>
-        <div class="header">
-            <h1 class="page-title font-bold text-center text-5xl">NYC MOVIES . CLUB</h1>
-            <label>Start Date:</label>
-            <input type="date" id="startDate">
-            <br />
-            <label>End Date:</label>
-            <input type="date" id="endDate">
+    <body class="bg-gray-100">
+        <div class="header p-4">
+            <h1 class="page-title font-bold text-center text-5xl bg-red-100 py-4"><a href="https://nycmovies.club">NYC MOVIES . CLUB</a></h1>
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-center gap-2 mt-4 text-center">
+                <div>
+                    <label for="startDate">Start Date:</label>
+                    <input type="date" id="startDate" class="border rounded px-2 py-1">
+                </div>
+                <div>
+                    <label for="endDate">End Date:</label>
+                    <input type="date" id="endDate" class="border  rounded px-2 py-1">
+                </div>
+            </div>
         </div>
-        <div class="content overflow-x-auto">
-            <table class="min-w-full divide-y divide-gray-200">
-                <thead class="bg-gray-100">
-                    <tr>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Title</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Showtime</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Theater</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Borough</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Theater Address</th>
-                    </tr>
-                </thead>    
-                <tbody class="bg-white divide-y divide-gray-200">
-                
-                    <tr class="hover:bg-gray-50">
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="None">Misericordia</a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">2025-03-31 10:35:00</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="https://www.ifccenter.com/"></a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Brooklyn</th>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">38 South 3rd St., Brooklyn NY, 11249</th> <!--Maybe this can be a Google Maps link-->
-                    </tr>
-                
-                    <tr class="hover:bg-gray-50">
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="None">Live Action Oscar-Nominated Shorts 2025</a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">2025-03-31 10:45:00</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="https://www.ifccenter.com/"></a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Brooklyn</th>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">38 South 3rd St., Brooklyn NY, 11249</th> <!--Maybe this can be a Google Maps link-->
-                    </tr>
-                
-                    <tr class="hover:bg-gray-50">
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="None">Janis Ian: Breaking Silence</a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">2025-03-31 10:55:00</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="https://www.ifccenter.com/"></a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Brooklyn</th>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">38 South 3rd St., Brooklyn NY, 11249</th> <!--Maybe this can be a Google Maps link-->
-                    </tr>
-                
-                    <tr class="hover:bg-gray-50">
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="None">Secret Mall Apartment</a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">2025-03-31 11:25:00</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="https://www.ifccenter.com/"></a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Brooklyn</th>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">38 South 3rd St., Brooklyn NY, 11249</th> <!--Maybe this can be a Google Maps link-->
-                    </tr>
-                
-                    <tr class="hover:bg-gray-50">
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="None">Animated Oscar-Nominated Shorts 2025</a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">2025-03-31 11:30:00</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="https://www.ifccenter.com/"></a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Brooklyn</th>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">38 South 3rd St., Brooklyn NY, 11249</th> <!--Maybe this can be a Google Maps link-->
-                    </tr>
-                
-                    <tr class="hover:bg-gray-50">
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="None">Viet and Nam</a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">2025-03-31 12:40:00</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="https://www.ifccenter.com/"></a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Brooklyn</th>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">38 South 3rd St., Brooklyn NY, 11249</th> <!--Maybe this can be a Google Maps link-->
-                    </tr>
-                
-                    <tr class="hover:bg-gray-50">
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="None">Eephus (Open Captioning)</a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">2025-03-31 12:55:00</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="https://www.ifccenter.com/"></a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Brooklyn</th>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">38 South 3rd St., Brooklyn NY, 11249</th> <!--Maybe this can be a Google Maps link-->
-                    </tr>
-                
-                    <tr class="hover:bg-gray-50">
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="None">Mickey 17</a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">2025-03-31 13:00:00</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="https://quadcinema.com"></a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Brooklyn</th>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">38 South 3rd St., Brooklyn NY, 11249</th> <!--Maybe this can be a Google Maps link-->
-                    </tr>
-                
-                    <tr class="hover:bg-gray-50">
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="None">Janis Ian: Breaking Silence</a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">2025-03-31 13:15:00</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="https://www.ifccenter.com/"></a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Brooklyn</th>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">38 South 3rd St., Brooklyn NY, 11249</th> <!--Maybe this can be a Google Maps link-->
-                    </tr>
-                
-                    <tr class="hover:bg-gray-50">
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="None">Misericordia</a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">2025-03-31 13:40:00</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="https://www.ifccenter.com/"></a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Brooklyn</th>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">38 South 3rd St., Brooklyn NY, 11249</th> <!--Maybe this can be a Google Maps link-->
-                    </tr>
-                
-                    <tr class="hover:bg-gray-50">
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="None">Secret Mall Apartment</a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">2025-03-31 13:45:00</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="https://www.ifccenter.com/"></a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Brooklyn</th>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">38 South 3rd St., Brooklyn NY, 11249</th> <!--Maybe this can be a Google Maps link-->
-                    </tr>
-                
-                    <tr class="hover:bg-gray-50">
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="None">Being Maria</a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">2025-03-31 14:50:00</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="https://quadcinema.com"></a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Brooklyn</th>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">38 South 3rd St., Brooklyn NY, 11249</th> <!--Maybe this can be a Google Maps link-->
-                    </tr>
-                
-                    <tr class="hover:bg-gray-50">
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="None">Conclave</a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">2025-03-31 14:50:00</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="https://quadcinema.com"></a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Brooklyn</th>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">38 South 3rd St., Brooklyn NY, 11249</th> <!--Maybe this can be a Google Maps link-->
-                    </tr>
-                
-                    <tr class="hover:bg-gray-50">
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="None">Thank You Very Much</a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">2025-03-31 15:05:00</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="https://quadcinema.com"></a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Brooklyn</th>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">38 South 3rd St., Brooklyn NY, 11249</th> <!--Maybe this can be a Google Maps link-->
-                    </tr>
-                
-                    <tr class="hover:bg-gray-50">
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="None">Eephus</a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">2025-03-31 15:10:00</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="https://www.ifccenter.com/"></a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Brooklyn</th>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">38 South 3rd St., Brooklyn NY, 11249</th> <!--Maybe this can be a Google Maps link-->
-                    </tr>
-                
-                    <tr class="hover:bg-gray-50">
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="None">Viet and Nam</a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">2025-03-31 15:35:00</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="https://www.ifccenter.com/"></a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Brooklyn</th>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">38 South 3rd St., Brooklyn NY, 11249</th> <!--Maybe this can be a Google Maps link-->
-                    </tr>
-                
-                    <tr class="hover:bg-gray-50">
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="None">Love & Pop</a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">2025-03-31 15:50:00</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="https://www.ifccenter.com/"></a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Brooklyn</th>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">38 South 3rd St., Brooklyn NY, 11249</th> <!--Maybe this can be a Google Maps link-->
-                    </tr>
-                
-                    <tr class="hover:bg-gray-50">
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="None">Mickey 17</a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">2025-03-31 16:00:00</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="https://quadcinema.com"></a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Brooklyn</th>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">38 South 3rd St., Brooklyn NY, 11249</th> <!--Maybe this can be a Google Maps link-->
-                    </tr>
-                
-                    <tr class="hover:bg-gray-50">
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="None">Misericordia</a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">2025-03-31 16:10:00</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="https://www.ifccenter.com/"></a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Brooklyn</th>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">38 South 3rd St., Brooklyn NY, 11249</th> <!--Maybe this can be a Google Maps link-->
-                    </tr>
-                
-                    <tr class="hover:bg-gray-50">
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="None">Secret Mall Apartment</a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">2025-03-31 16:15:00</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="https://www.ifccenter.com/"></a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Brooklyn</th>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">38 South 3rd St., Brooklyn NY, 11249</th> <!--Maybe this can be a Google Maps link-->
-                    </tr>
-                
-                    <tr class="hover:bg-gray-50">
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="None">Chungking Express</a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">2025-03-31 16:45:00</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="https://metrograph.com/"></a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Brooklyn</th>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">38 South 3rd St., Brooklyn NY, 11249</th> <!--Maybe this can be a Google Maps link-->
-                    </tr>
-                
-                    <tr class="hover:bg-gray-50">
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="None">Being Maria</a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">2025-03-31 17:00:00</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="https://quadcinema.com"></a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Brooklyn</th>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">38 South 3rd St., Brooklyn NY, 11249</th> <!--Maybe this can be a Google Maps link-->
-                    </tr>
-                
-                    <tr class="hover:bg-gray-50">
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="None">Seven Veils</a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">2025-03-31 17:10:00</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="https://quadcinema.com"></a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Brooklyn</th>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">38 South 3rd St., Brooklyn NY, 11249</th> <!--Maybe this can be a Google Maps link-->
-                    </tr>
-                
-                    <tr class="hover:bg-gray-50">
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="None">Thank You Very Much</a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">2025-03-31 17:20:00</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="https://quadcinema.com"></a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Brooklyn</th>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">38 South 3rd St., Brooklyn NY, 11249</th> <!--Maybe this can be a Google Maps link-->
-                    </tr>
-                
-                    <tr class="hover:bg-gray-50">
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="None">Eephus</a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">2025-03-31 17:25:00</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="https://www.ifccenter.com/"></a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Brooklyn</th>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">38 South 3rd St., Brooklyn NY, 11249</th> <!--Maybe this can be a Google Maps link-->
-                    </tr>
-                
-                    <tr class="hover:bg-gray-50">
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="None">National Theatre Live: Dr. Strangelove</a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">2025-03-31 18:30:00</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="https://www.ifccenter.com/"></a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Brooklyn</th>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">38 South 3rd St., Brooklyn NY, 11249</th> <!--Maybe this can be a Google Maps link-->
-                    </tr>
-                
-                    <tr class="hover:bg-gray-50">
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="None">Viet and Nam</a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">2025-03-31 18:30:00</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="https://www.ifccenter.com/"></a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Brooklyn</th>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">38 South 3rd St., Brooklyn NY, 11249</th> <!--Maybe this can be a Google Maps link-->
-                    </tr>
-                
-                    <tr class="hover:bg-gray-50">
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="None">Misericordia</a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">2025-03-31 18:40:00</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="https://www.ifccenter.com/"></a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Brooklyn</th>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">38 South 3rd St., Brooklyn NY, 11249</th> <!--Maybe this can be a Google Maps link-->
-                    </tr>
-                
-                    <tr class="hover:bg-gray-50">
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="None">Secret Mall Apartment</a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">2025-03-31 18:45:00</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="https://www.ifccenter.com/"></a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Brooklyn</th>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">38 South 3rd St., Brooklyn NY, 11249</th> <!--Maybe this can be a Google Maps link-->
-                    </tr>
-                
-                    <tr class="hover:bg-gray-50">
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="None">Mickey 17</a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">2025-03-31 19:00:00</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="https://quadcinema.com"></a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Brooklyn</th>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">38 South 3rd St., Brooklyn NY, 11249</th> <!--Maybe this can be a Google Maps link-->
-                    </tr>
-                
-                    <tr class="hover:bg-gray-50">
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="None">Nights of Cabiria</a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">2025-03-31 19:00:00</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="https://metrograph.com/"></a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Brooklyn</th>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">38 South 3rd St., Brooklyn NY, 11249</th> <!--Maybe this can be a Google Maps link-->
-                    </tr>
-                
-                    <tr class="hover:bg-gray-50">
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="None">Conclave</a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">2025-03-31 19:15:00</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="https://quadcinema.com"></a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Brooklyn</th>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">38 South 3rd St., Brooklyn NY, 11249</th> <!--Maybe this can be a Google Maps link-->
-                    </tr>
-                
-                    <tr class="hover:bg-gray-50">
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="None">Julie Keeps Quiet</a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">2025-03-31 19:15:00</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="https://metrograph.com/"></a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Brooklyn</th>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">38 South 3rd St., Brooklyn NY, 11249</th> <!--Maybe this can be a Google Maps link-->
-                    </tr>
-                
-                    <tr class="hover:bg-gray-50">
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="None">Being Maria</a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">2025-03-31 19:25:00</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="https://quadcinema.com"></a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Brooklyn</th>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">38 South 3rd St., Brooklyn NY, 11249</th> <!--Maybe this can be a Google Maps link-->
-                    </tr>
-                
-                    <tr class="hover:bg-gray-50">
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="None">Thank You Very Much</a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">2025-03-31 19:30:00</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="https://quadcinema.com"></a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Brooklyn</th>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">38 South 3rd St., Brooklyn NY, 11249</th> <!--Maybe this can be a Google Maps link-->
-                    </tr>
-                
-                    <tr class="hover:bg-gray-50">
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="None">Eephus</a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">2025-03-31 19:40:00</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="https://www.ifccenter.com/"></a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Brooklyn</th>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">38 South 3rd St., Brooklyn NY, 11249</th> <!--Maybe this can be a Google Maps link-->
-                    </tr>
-                
-                    <tr class="hover:bg-gray-50">
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="None">Secret Mall Apartment</a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">2025-03-31 21:05:00</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="https://www.ifccenter.com/"></a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Brooklyn</th>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">38 South 3rd St., Brooklyn NY, 11249</th> <!--Maybe this can be a Google Maps link-->
-                    </tr>
-                
-                    <tr class="hover:bg-gray-50">
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="None">Janis Ian: Breaking Silence</a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">2025-03-31 21:10:00</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="https://www.ifccenter.com/"></a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Brooklyn</th>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">38 South 3rd St., Brooklyn NY, 11249</th> <!--Maybe this can be a Google Maps link-->
-                    </tr>
-                
-                    <tr class="hover:bg-gray-50">
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="None">Titane</a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">2025-03-31 21:15:00</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="https://metrograph.com/"></a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Brooklyn</th>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">38 South 3rd St., Brooklyn NY, 11249</th> <!--Maybe this can be a Google Maps link-->
-                    </tr>
-                
-                    <tr class="hover:bg-gray-50">
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="None">Black Narcissus</a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">2025-03-31 21:20:00</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="https://metrograph.com/"></a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Brooklyn</th>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">38 South 3rd St., Brooklyn NY, 11249</th> <!--Maybe this can be a Google Maps link-->
-                    </tr>
-                
-                    <tr class="hover:bg-gray-50">
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="None">Viet and Nam</a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">2025-03-31 21:25:00</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="https://www.ifccenter.com/"></a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Brooklyn</th>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">38 South 3rd St., Brooklyn NY, 11249</th> <!--Maybe this can be a Google Maps link-->
-                    </tr>
-                
-                    <tr class="hover:bg-gray-50">
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="None">Love & Pop</a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">2025-03-31 21:30:00</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="https://www.ifccenter.com/"></a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Brooklyn</th>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">38 South 3rd St., Brooklyn NY, 11249</th> <!--Maybe this can be a Google Maps link-->
-                    </tr>
-                
-                    <tr class="hover:bg-gray-50">
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="None">Misericordia</a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">2025-03-31 21:50:00</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><a href="https://www.ifccenter.com/"></a></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Brooklyn</th>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">38 South 3rd St., Brooklyn NY, 11249</th> <!--Maybe this can be a Google Maps link-->
-                    </tr>
-                
-                </tbody>
-            </table>
+
+        <div class="content px-4 py-6 grid md:grid-cols-2 grid-cols-1 justify-center items-center gap-4">
+        
+            <div class="movie-wrapper mx-w-full self-start">
+                <div class="movie rounded w-full max-w-3xl ml-auto mr-auto bg-white shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col sm:flex-row overflow-hidden">
+                    
+                    <div class="image-wrapper p-1 mt-auto mb-auto sm:h-auto sm:flex-shrink-0">
+                        <img class="object-cover" 
+                            src="https://image.tmdb.org/t/p/w200/c9vOIVfBW3Uk28frA48EMOJQuIR.jpg" 
+                            alt="Poster">
+                    </div> 
+                    <div class="details p-4 flex-1 flex flex-col">
+                        <div class="mb-3">
+                            <div class="title text-2xl font-semibold text-gray-800">Psycho Therapy: The Shallow Tale of a Writer Who Decided to Write About a Serial Killer</div>
+                            <div class="text-sm text-gray-600 mt-2">
+                                <div>Director: <span class="text-gray-800 font-medium">Tolga Karaçelik</span></div>
+                                <div>Runtime: <span class="text-gray-800 font-medium">102</span></div>
+                            </div>
+                        </div>
+                        <div class="border-t border-gray-300 my-2"></div>
+                        <div class="flex flex-col gap-3">
+                            <div class="text-sm font-medium text-gray-600">Showtimes</div>
+                            <div>
+                            
+                                <div class="text-xs font-semibold text-gray-700"><a href="https://www.ifccenter.com/">IFC Center</a></div>
+                                <div class="flex flex-wrap gap-2 mt-1">
+                                
+                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=489779~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">2025-04-06 10:35:00</a>
+                                
+                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=489779~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">2025-04-06 13:55:00</a>
+                                
+                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=489779~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">2025-04-06 18:45:00</a>
+                                
+                                </div>
+                            
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <button class="w-full text-center text-blue-600 text-sm font-medium py-2 border border-blue-600 rounded-lg hover:bg-blue-50 transition">
+                                See showtimes for all dates
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="movie-wrapper mx-w-full self-start">
+                <div class="movie rounded w-full max-w-3xl ml-auto mr-auto bg-white shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col sm:flex-row overflow-hidden">
+                    
+                    <div class="image-wrapper p-1 mt-auto mb-auto sm:h-auto sm:flex-shrink-0">
+                        <img class="object-cover" 
+                            src="https://image.tmdb.org/t/p/w200/zDdzvIVGkAUfUMi7mJykgEu5ynu.jpg" 
+                            alt="Poster">
+                    </div> 
+                    <div class="details p-4 flex-1 flex flex-col">
+                        <div class="mb-3">
+                            <div class="title text-2xl font-semibold text-gray-800">Eephus</div>
+                            <div class="text-sm text-gray-600 mt-2">
+                                <div>Director: <span class="text-gray-800 font-medium">Carson Lund</span></div>
+                                <div>Runtime: <span class="text-gray-800 font-medium">98</span></div>
+                            </div>
+                        </div>
+                        <div class="border-t border-gray-300 my-2"></div>
+                        <div class="flex flex-col gap-3">
+                            <div class="text-sm font-medium text-gray-600">Showtimes</div>
+                            <div>
+                            
+                                <div class="text-xs font-semibold text-gray-700"><a href="https://www.ifccenter.com/">IFC Center</a></div>
+                                <div class="flex flex-wrap gap-2 mt-1">
+                                
+                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=489740~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">2025-04-06 10:40:00</a>
+                                
+                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=489740~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">2025-04-06 16:20:00</a>
+                                
+                                </div>
+                            
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <button class="w-full text-center text-blue-600 text-sm font-medium py-2 border border-blue-600 rounded-lg hover:bg-blue-50 transition">
+                                See showtimes for all dates
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="movie-wrapper mx-w-full self-start">
+                <div class="movie rounded w-full max-w-3xl ml-auto mr-auto bg-white shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col sm:flex-row overflow-hidden">
+                    
+                    <div class="image-wrapper p-1 mt-auto mb-auto sm:h-auto sm:flex-shrink-0">
+                        <img class="object-cover" 
+                            src="https://image.tmdb.org/t/p/w200/zQLkQvbSmey76CEKuJkxfrNGwlU.jpg" 
+                            alt="Poster">
+                    </div> 
+                    <div class="details p-4 flex-1 flex flex-col">
+                        <div class="mb-3">
+                            <div class="title text-2xl font-semibold text-gray-800">Janis Ian: Breaking Silence</div>
+                            <div class="text-sm text-gray-600 mt-2">
+                                <div>Director: <span class="text-gray-800 font-medium">Varda Bar-Kar</span></div>
+                                <div>Runtime: <span class="text-gray-800 font-medium">0</span></div>
+                            </div>
+                        </div>
+                        <div class="border-t border-gray-300 my-2"></div>
+                        <div class="flex flex-col gap-3">
+                            <div class="text-sm font-medium text-gray-600">Showtimes</div>
+                            <div>
+                            
+                                <div class="text-xs font-semibold text-gray-700"><a href="https://www.ifccenter.com/">IFC Center</a></div>
+                                <div class="flex flex-wrap gap-2 mt-1">
+                                
+                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=488165~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">2025-04-06 11:00:00</a>
+                                
+                                </div>
+                            
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <button class="w-full text-center text-blue-600 text-sm font-medium py-2 border border-blue-600 rounded-lg hover:bg-blue-50 transition">
+                                See showtimes for all dates
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="movie-wrapper mx-w-full self-start">
+                <div class="movie rounded w-full max-w-3xl ml-auto mr-auto bg-white shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col sm:flex-row overflow-hidden">
+                    
+                    <div class="image-wrapper p-1 mt-auto mb-auto sm:h-auto sm:flex-shrink-0">
+                        <img class="object-cover" 
+                            src="https://image.tmdb.org/t/p/w200/qTg05RNJIvb9w4Z7XIcAZxuZmTn.jpg" 
+                            alt="Poster">
+                    </div> 
+                    <div class="details p-4 flex-1 flex flex-col">
+                        <div class="mb-3">
+                            <div class="title text-2xl font-semibold text-gray-800">High Art</div>
+                            <div class="text-sm text-gray-600 mt-2">
+                                <div>Director: <span class="text-gray-800 font-medium">Lisa Cholodenko</span></div>
+                                <div>Runtime: <span class="text-gray-800 font-medium">101</span></div>
+                            </div>
+                        </div>
+                        <div class="border-t border-gray-300 my-2"></div>
+                        <div class="flex flex-col gap-3">
+                            <div class="text-sm font-medium text-gray-600">Showtimes</div>
+                            <div>
+                            
+                                <div class="text-xs font-semibold text-gray-700"><a href="https://www.ifccenter.com/">IFC Center</a></div>
+                                <div class="flex flex-wrap gap-2 mt-1">
+                                
+                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=488162~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">2025-04-06 11:15:00</a>
+                                
+                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=488162~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">2025-04-06 16:30:00</a>
+                                
+                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=488162~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">2025-04-06 19:00:00</a>
+                                
+                                </div>
+                            
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <button class="w-full text-center text-blue-600 text-sm font-medium py-2 border border-blue-600 rounded-lg hover:bg-blue-50 transition">
+                                See showtimes for all dates
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="movie-wrapper mx-w-full self-start">
+                <div class="movie rounded w-full max-w-3xl ml-auto mr-auto bg-white shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col sm:flex-row overflow-hidden">
+                    
+                    <div class="image-wrapper p-1 mt-auto mb-auto sm:h-auto sm:flex-shrink-0">
+                        <img class="object-cover" 
+                            src="https://image.tmdb.org/t/p/w200/jeoTppDMtxVW3KBWCFCuQfjyuy3.jpg" 
+                            alt="Poster">
+                    </div> 
+                    <div class="details p-4 flex-1 flex flex-col">
+                        <div class="mb-3">
+                            <div class="title text-2xl font-semibold text-gray-800">Misericordia</div>
+                            <div class="text-sm text-gray-600 mt-2">
+                                <div>Director: <span class="text-gray-800 font-medium">Emma Dante</span></div>
+                                <div>Runtime: <span class="text-gray-800 font-medium">95</span></div>
+                            </div>
+                        </div>
+                        <div class="border-t border-gray-300 my-2"></div>
+                        <div class="flex flex-col gap-3">
+                            <div class="text-sm font-medium text-gray-600">Showtimes</div>
+                            <div>
+                            
+                                <div class="text-xs font-semibold text-gray-700"><a href="https://www.ifccenter.com/">IFC Center</a></div>
+                                <div class="flex flex-wrap gap-2 mt-1">
+                                
+                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=489764~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">2025-04-06 11:30:00</a>
+                                
+                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=489764~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">2025-04-06 16:10:00</a>
+                                
+                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=489764~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">2025-04-06 21:05:00</a>
+                                
+                                </div>
+                            
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <button class="w-full text-center text-blue-600 text-sm font-medium py-2 border border-blue-600 rounded-lg hover:bg-blue-50 transition">
+                                See showtimes for all dates
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="movie-wrapper mx-w-full self-start">
+                <div class="movie rounded w-full max-w-3xl ml-auto mr-auto bg-white shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col sm:flex-row overflow-hidden">
+                    
+                    <div class="image-wrapper p-1 mt-auto mb-auto sm:h-auto sm:flex-shrink-0">
+                        <img class="object-cover" 
+                            src="https://image.tmdb.org/t/p/w200/19hyCudualHxCD0GrEngqsi0wBF.jpg" 
+                            alt="Poster">
+                    </div> 
+                    <div class="details p-4 flex-1 flex flex-col">
+                        <div class="mb-3">
+                            <div class="title text-2xl font-semibold text-gray-800">Amour</div>
+                            <div class="text-sm text-gray-600 mt-2">
+                                <div>Director: <span class="text-gray-800 font-medium">Michael Haneke</span></div>
+                                <div>Runtime: <span class="text-gray-800 font-medium">127</span></div>
+                            </div>
+                        </div>
+                        <div class="border-t border-gray-300 my-2"></div>
+                        <div class="flex flex-col gap-3">
+                            <div class="text-sm font-medium text-gray-600">Showtimes</div>
+                            <div>
+                            
+                                <div class="text-xs font-semibold text-gray-700"><a href="https://metrograph.com/">Metrograph</a></div>
+                                <div class="flex flex-wrap gap-2 mt-1">
+                                
+                                    <a href="https://metrograph.com/film/?vista_film_id=9999001734" class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">2025-04-06 11:30:00</a>
+                                
+                                </div>
+                            
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <button class="w-full text-center text-blue-600 text-sm font-medium py-2 border border-blue-600 rounded-lg hover:bg-blue-50 transition">
+                                See showtimes for all dates
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="movie-wrapper mx-w-full self-start">
+                <div class="movie rounded w-full max-w-3xl ml-auto mr-auto bg-white shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col sm:flex-row overflow-hidden">
+                    
+                    <div class="image-wrapper p-1 mt-auto mb-auto sm:h-auto sm:flex-shrink-0">
+                        <img class="object-cover" 
+                            src="https://image.tmdb.org/t/p/w200/7V8U8hiLlwyjOmsGgvy7KlrQxTR.jpg" 
+                            alt="Poster">
+                    </div> 
+                    <div class="details p-4 flex-1 flex flex-col">
+                        <div class="mb-3">
+                            <div class="title text-2xl font-semibold text-gray-800">Wicked Games - Rimini Sparta</div>
+                            <div class="text-sm text-gray-600 mt-2">
+                                <div>Director: <span class="text-gray-800 font-medium">Ulrich Seidl</span></div>
+                                <div>Runtime: <span class="text-gray-800 font-medium">205</span></div>
+                            </div>
+                        </div>
+                        <div class="border-t border-gray-300 my-2"></div>
+                        <div class="flex flex-col gap-3">
+                            <div class="text-sm font-medium text-gray-600">Showtimes</div>
+                            <div>
+                            
+                                <div class="text-xs font-semibold text-gray-700"><a href="https://metrograph.com/">Metrograph</a></div>
+                                <div class="flex flex-wrap gap-2 mt-1">
+                                
+                                    <a href="https://metrograph.com/film/?vista_film_id=9999004214" class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">2025-04-06 12:00:00</a>
+                                
+                                </div>
+                            
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <button class="w-full text-center text-blue-600 text-sm font-medium py-2 border border-blue-600 rounded-lg hover:bg-blue-50 transition">
+                                See showtimes for all dates
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="movie-wrapper mx-w-full self-start">
+                <div class="movie rounded w-full max-w-3xl ml-auto mr-auto bg-white shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col sm:flex-row overflow-hidden">
+                    
+                    <div class="image-wrapper p-1 mt-auto mb-auto sm:h-auto sm:flex-shrink-0">
+                        <img class="object-cover" 
+                            src="https://image.tmdb.org/t/p/w200/nc6ZQMlQrCq03d1WXyYaeUXRlCY.jpg" 
+                            alt="Poster">
+                    </div> 
+                    <div class="details p-4 flex-1 flex flex-col">
+                        <div class="mb-3">
+                            <div class="title text-2xl font-semibold text-gray-800">Secret Mall Apartment</div>
+                            <div class="text-sm text-gray-600 mt-2">
+                                <div>Director: <span class="text-gray-800 font-medium">Jeremy Workman</span></div>
+                                <div>Runtime: <span class="text-gray-800 font-medium">91</span></div>
+                            </div>
+                        </div>
+                        <div class="border-t border-gray-300 my-2"></div>
+                        <div class="flex flex-col gap-3">
+                            <div class="text-sm font-medium text-gray-600">Showtimes</div>
+                            <div>
+                            
+                                <div class="text-xs font-semibold text-gray-700"><a href="https://www.ifccenter.com/">IFC Center</a></div>
+                                <div class="flex flex-wrap gap-2 mt-1">
+                                
+                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=489888~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">2025-04-06 12:40:00</a>
+                                
+                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=489888~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">2025-04-06 14:55:00</a>
+                                
+                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=489888~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">2025-04-06 17:10:00</a>
+                                
+                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=489888~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">2025-04-06 19:25:00</a>
+                                
+                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=489888~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">2025-04-06 21:40:00</a>
+                                
+                                </div>
+                            
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <button class="w-full text-center text-blue-600 text-sm font-medium py-2 border border-blue-600 rounded-lg hover:bg-blue-50 transition">
+                                See showtimes for all dates
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="movie-wrapper mx-w-full self-start">
+                <div class="movie rounded w-full max-w-3xl ml-auto mr-auto bg-white shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col sm:flex-row overflow-hidden">
+                    
+                    <div class="image-wrapper p-1 mt-auto mb-auto sm:h-auto sm:flex-shrink-0">
+                        <img class="object-cover" 
+                            src="https://image.tmdb.org/t/p/w200/etJwfiUR0gtQwH8shhwjRr5bARQ.jpg" 
+                            alt="Poster">
+                    </div> 
+                    <div class="details p-4 flex-1 flex flex-col">
+                        <div class="mb-3">
+                            <div class="title text-2xl font-semibold text-gray-800">The Luckiest Man in America</div>
+                            <div class="text-sm text-gray-600 mt-2">
+                                <div>Director: <span class="text-gray-800 font-medium">Samir Oliveros</span></div>
+                                <div>Runtime: <span class="text-gray-800 font-medium">90</span></div>
+                            </div>
+                        </div>
+                        <div class="border-t border-gray-300 my-2"></div>
+                        <div class="flex flex-col gap-3">
+                            <div class="text-sm font-medium text-gray-600">Showtimes</div>
+                            <div>
+                            
+                                <div class="text-xs font-semibold text-gray-700"><a href="https://www.ifccenter.com/">IFC Center</a></div>
+                                <div class="flex flex-wrap gap-2 mt-1">
+                                
+                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=489762~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">2025-04-06 12:45:00</a>
+                                
+                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=489762~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">2025-04-06 15:00:00</a>
+                                
+                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=489762~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">2025-04-06 17:15:00</a>
+                                
+                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=489762~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">2025-04-06 21:45:00</a>
+                                
+                                </div>
+                            
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <button class="w-full text-center text-blue-600 text-sm font-medium py-2 border border-blue-600 rounded-lg hover:bg-blue-50 transition">
+                                See showtimes for all dates
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="movie-wrapper mx-w-full self-start">
+                <div class="movie rounded w-full max-w-3xl ml-auto mr-auto bg-white shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col sm:flex-row overflow-hidden">
+                    
+                    <div class="image-wrapper p-1 mt-auto mb-auto sm:h-auto sm:flex-shrink-0">
+                        <img class="object-cover" 
+                            src="https://image.tmdb.org/t/p/w200/uXFU9rEfp3loRrUX80j1xM0Pcjm.jpg" 
+                            alt="Poster">
+                    </div> 
+                    <div class="details p-4 flex-1 flex flex-col">
+                        <div class="mb-3">
+                            <div class="title text-2xl font-semibold text-gray-800">The Hermit of Treig</div>
+                            <div class="text-sm text-gray-600 mt-2">
+                                <div>Director: <span class="text-gray-800 font-medium">Lizzie MacKenzie</span></div>
+                                <div>Runtime: <span class="text-gray-800 font-medium">80</span></div>
+                            </div>
+                        </div>
+                        <div class="border-t border-gray-300 my-2"></div>
+                        <div class="flex flex-col gap-3">
+                            <div class="text-sm font-medium text-gray-600">Showtimes</div>
+                            <div>
+                            
+                                <div class="text-xs font-semibold text-gray-700"><a href="https://quadcinema.com">Quad Cinema</a></div>
+                                <div class="flex flex-wrap gap-2 mt-1">
+                                
+                                    <a href="http://www.fandango.com/quadcinema_aaefp/theaterpage?date=2025-04-06" class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">2025-04-06 13:15:00</a>
+                                
+                                    <a href="http://www.fandango.com/quadcinema_aaefp/theaterpage?date=2025-04-06" class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">2025-04-06 15:15:00</a>
+                                
+                                    <a href="http://www.fandango.com/quadcinema_aaefp/theaterpage?date=2025-04-06" class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">2025-04-06 18:15:00</a>
+                                
+                                    <a href="http://www.fandango.com/quadcinema_aaefp/theaterpage?date=2025-04-06" class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">2025-04-06 20:15:00</a>
+                                
+                                </div>
+                            
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <button class="w-full text-center text-blue-600 text-sm font-medium py-2 border border-blue-600 rounded-lg hover:bg-blue-50 transition">
+                                See showtimes for all dates
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="movie-wrapper mx-w-full self-start">
+                <div class="movie rounded w-full max-w-3xl ml-auto mr-auto bg-white shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col sm:flex-row overflow-hidden">
+                    
+                    <div class="image-wrapper p-1 mt-auto mb-auto sm:h-auto sm:flex-shrink-0">
+                        <img class="object-cover" 
+                            src="https://image.tmdb.org/t/p/w200/axtvB6qoORMZQ2qPZdaFcBOM8g3.jpg" 
+                            alt="Poster">
+                    </div> 
+                    <div class="details p-4 flex-1 flex flex-col">
+                        <div class="mb-3">
+                            <div class="title text-2xl font-semibold text-gray-800">Viet and Nam</div>
+                            <div class="text-sm text-gray-600 mt-2">
+                                <div>Director: <span class="text-gray-800 font-medium">Truong Minh Quy</span></div>
+                                <div>Runtime: <span class="text-gray-800 font-medium">129</span></div>
+                            </div>
+                        </div>
+                        <div class="border-t border-gray-300 my-2"></div>
+                        <div class="flex flex-col gap-3">
+                            <div class="text-sm font-medium text-gray-600">Showtimes</div>
+                            <div>
+                            
+                                <div class="text-xs font-semibold text-gray-700"><a href="https://www.ifccenter.com/">IFC Center</a></div>
+                                <div class="flex flex-wrap gap-2 mt-1">
+                                
+                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=489889~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">2025-04-06 13:25:00</a>
+                                
+                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=489889~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">2025-04-06 18:30:00</a>
+                                
+                                </div>
+                            
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <button class="w-full text-center text-blue-600 text-sm font-medium py-2 border border-blue-600 rounded-lg hover:bg-blue-50 transition">
+                                See showtimes for all dates
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="movie-wrapper mx-w-full self-start">
+                <div class="movie rounded w-full max-w-3xl ml-auto mr-auto bg-white shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col sm:flex-row overflow-hidden">
+                    
+                    <div class="image-wrapper p-1 mt-auto mb-auto sm:h-auto sm:flex-shrink-0">
+                        <img class="object-cover" 
+                            src="https://image.tmdb.org/t/p/w200/AtBV9COCzgKvmmyDFXTEAh79wYD.jpg" 
+                            alt="Poster">
+                    </div> 
+                    <div class="details p-4 flex-1 flex flex-col">
+                        <div class="mb-3">
+                            <div class="title text-2xl font-semibold text-gray-800">Being Maria</div>
+                            <div class="text-sm text-gray-600 mt-2">
+                                <div>Director: <span class="text-gray-800 font-medium">Jessica Palud</span></div>
+                                <div>Runtime: <span class="text-gray-800 font-medium">100</span></div>
+                            </div>
+                        </div>
+                        <div class="border-t border-gray-300 my-2"></div>
+                        <div class="flex flex-col gap-3">
+                            <div class="text-sm font-medium text-gray-600">Showtimes</div>
+                            <div>
+                            
+                                <div class="text-xs font-semibold text-gray-700"><a href="https://quadcinema.com">Quad Cinema</a></div>
+                                <div class="flex flex-wrap gap-2 mt-1">
+                                
+                                    <a href="http://www.fandango.com/quadcinema_aaefp/theaterpage?date=2025-04-06" class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">2025-04-06 13:35:00</a>
+                                
+                                    <a href="http://www.fandango.com/quadcinema_aaefp/theaterpage?date=2025-04-06" class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">2025-04-06 18:00:00</a>
+                                
+                                </div>
+                            
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <button class="w-full text-center text-blue-600 text-sm font-medium py-2 border border-blue-600 rounded-lg hover:bg-blue-50 transition">
+                                See showtimes for all dates
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="movie-wrapper mx-w-full self-start">
+                <div class="movie rounded w-full max-w-3xl ml-auto mr-auto bg-white shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col sm:flex-row overflow-hidden">
+                    
+                    <div class="image-wrapper p-1 mt-auto mb-auto sm:h-auto sm:flex-shrink-0">
+                        <img class="object-cover" 
+                            src="https://image.tmdb.org/t/p/w200/rk2lKgEtjF9HO9N2UFMRc2cMGdj.jpg" 
+                            alt="Poster">
+                    </div> 
+                    <div class="details p-4 flex-1 flex flex-col">
+                        <div class="mb-3">
+                            <div class="title text-2xl font-semibold text-gray-800">The Elephant Man</div>
+                            <div class="text-sm text-gray-600 mt-2">
+                                <div>Director: <span class="text-gray-800 font-medium">David Lynch</span></div>
+                                <div>Runtime: <span class="text-gray-800 font-medium">124</span></div>
+                            </div>
+                        </div>
+                        <div class="border-t border-gray-300 my-2"></div>
+                        <div class="flex flex-col gap-3">
+                            <div class="text-sm font-medium text-gray-600">Showtimes</div>
+                            <div>
+                            
+                                <div class="text-xs font-semibold text-gray-700"><a href="https://www.ifccenter.com/">IFC Center</a></div>
+                                <div class="flex flex-wrap gap-2 mt-1">
+                                
+                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=489753~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">2025-04-06 13:40:00</a>
+                                
+                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=489753~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">2025-04-06 21:30:00</a>
+                                
+                                </div>
+                            
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <button class="w-full text-center text-blue-600 text-sm font-medium py-2 border border-blue-600 rounded-lg hover:bg-blue-50 transition">
+                                See showtimes for all dates
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="movie-wrapper mx-w-full self-start">
+                <div class="movie rounded w-full max-w-3xl ml-auto mr-auto bg-white shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col sm:flex-row overflow-hidden">
+                    
+                    <div class="image-wrapper p-1 mt-auto mb-auto sm:h-auto sm:flex-shrink-0">
+                        <img class="object-cover" 
+                            src="https://image.tmdb.org/t/p/w200/8YblIhRUmyl11Fy9A3pugJzUU9R.jpg" 
+                            alt="Poster">
+                    </div> 
+                    <div class="details p-4 flex-1 flex flex-col">
+                        <div class="mb-3">
+                            <div class="title text-2xl font-semibold text-gray-800">A Nice Indian Boy</div>
+                            <div class="text-sm text-gray-600 mt-2">
+                                <div>Director: <span class="text-gray-800 font-medium">Roshan Sethi</span></div>
+                                <div>Runtime: <span class="text-gray-800 font-medium">96</span></div>
+                            </div>
+                        </div>
+                        <div class="border-t border-gray-300 my-2"></div>
+                        <div class="flex flex-col gap-3">
+                            <div class="text-sm font-medium text-gray-600">Showtimes</div>
+                            <div>
+                            
+                                <div class="text-xs font-semibold text-gray-700"><a href="https://quadcinema.com">Quad Cinema</a></div>
+                                <div class="flex flex-wrap gap-2 mt-1">
+                                
+                                    <a href="http://www.fandango.com/quadcinema_aaefp/theaterpage?date=2025-04-06" class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">2025-04-06 13:45:00</a>
+                                
+                                    <a href="http://www.fandango.com/quadcinema_aaefp/theaterpage?date=2025-04-06" class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">2025-04-06 16:05:00</a>
+                                
+                                    <a href="http://www.fandango.com/quadcinema_aaefp/theaterpage?date=2025-04-06" class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">2025-04-06 18:05:00</a>
+                                
+                                    <a href="http://www.fandango.com/quadcinema_aaefp/theaterpage?date=2025-04-06" class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">2025-04-06 20:05:00</a>
+                                
+                                </div>
+                            
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <button class="w-full text-center text-blue-600 text-sm font-medium py-2 border border-blue-600 rounded-lg hover:bg-blue-50 transition">
+                                See showtimes for all dates
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="movie-wrapper mx-w-full self-start">
+                <div class="movie rounded w-full max-w-3xl ml-auto mr-auto bg-white shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col sm:flex-row overflow-hidden">
+                    
+                    <div class="image-wrapper p-1 mt-auto mb-auto sm:h-auto sm:flex-shrink-0">
+                        <img class="object-cover" 
+                            src="https://image.tmdb.org/t/p/w200/qhjcjiLcPhB0kniRlQfIoGiILbn.jpg" 
+                            alt="Poster">
+                    </div> 
+                    <div class="details p-4 flex-1 flex flex-col">
+                        <div class="mb-3">
+                            <div class="title text-2xl font-semibold text-gray-800">The Gospel According to St. Matthew</div>
+                            <div class="text-sm text-gray-600 mt-2">
+                                <div>Director: <span class="text-gray-800 font-medium">David Greene</span></div>
+                                <div>Runtime: <span class="text-gray-800 font-medium">103</span></div>
+                            </div>
+                        </div>
+                        <div class="border-t border-gray-300 my-2"></div>
+                        <div class="flex flex-col gap-3">
+                            <div class="text-sm font-medium text-gray-600">Showtimes</div>
+                            <div>
+                            
+                                <div class="text-xs font-semibold text-gray-700"><a href="https://metrograph.com/">Metrograph</a></div>
+                                <div class="flex flex-wrap gap-2 mt-1">
+                                
+                                    <a href="https://metrograph.com/film/?vista_film_id=9999002039" class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">2025-04-06 14:00:00</a>
+                                
+                                </div>
+                            
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <button class="w-full text-center text-blue-600 text-sm font-medium py-2 border border-blue-600 rounded-lg hover:bg-blue-50 transition">
+                                See showtimes for all dates
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="movie-wrapper mx-w-full self-start">
+                <div class="movie rounded w-full max-w-3xl ml-auto mr-auto bg-white shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col sm:flex-row overflow-hidden">
+                    
+                    <div class="image-wrapper p-1 mt-auto mb-auto sm:h-auto sm:flex-shrink-0">
+                        <img class="object-cover" 
+                            src="https://image.tmdb.org/t/p/w200/8HKA3Hwf8jQWy8TCYWr7C8Wft23.jpg" 
+                            alt="Poster">
+                    </div> 
+                    <div class="details p-4 flex-1 flex flex-col">
+                        <div class="mb-3">
+                            <div class="title text-2xl font-semibold text-gray-800">First Reformed</div>
+                            <div class="text-sm text-gray-600 mt-2">
+                                <div>Director: <span class="text-gray-800 font-medium">Paul Schrader</span></div>
+                                <div>Runtime: <span class="text-gray-800 font-medium">113</span></div>
+                            </div>
+                        </div>
+                        <div class="border-t border-gray-300 my-2"></div>
+                        <div class="flex flex-col gap-3">
+                            <div class="text-sm font-medium text-gray-600">Showtimes</div>
+                            <div>
+                            
+                                <div class="text-xs font-semibold text-gray-700"><a href="https://metrograph.com/">Metrograph</a></div>
+                                <div class="flex flex-wrap gap-2 mt-1">
+                                
+                                    <a href="https://metrograph.com/film/?vista_film_id=9999001717" class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">2025-04-06 15:45:00</a>
+                                
+                                </div>
+                            
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <button class="w-full text-center text-blue-600 text-sm font-medium py-2 border border-blue-600 rounded-lg hover:bg-blue-50 transition">
+                                See showtimes for all dates
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="movie-wrapper mx-w-full self-start">
+                <div class="movie rounded w-full max-w-3xl ml-auto mr-auto bg-white shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col sm:flex-row overflow-hidden">
+                    
+                    <div class="image-wrapper p-1 mt-auto mb-auto sm:h-auto sm:flex-shrink-0">
+                        <img class="object-cover" 
+                            src="https://image.tmdb.org/t/p/w200/wLsUb4RVAaDglz8axndpXEBjdho.jpg" 
+                            alt="Poster">
+                    </div> 
+                    <div class="details p-4 flex-1 flex flex-col">
+                        <div class="mb-3">
+                            <div class="title text-2xl font-semibold text-gray-800">Thank You Very Much</div>
+                            <div class="text-sm text-gray-600 mt-2">
+                                <div>Director: <span class="text-gray-800 font-medium">Alex Braverman</span></div>
+                                <div>Runtime: <span class="text-gray-800 font-medium">99</span></div>
+                            </div>
+                        </div>
+                        <div class="border-t border-gray-300 my-2"></div>
+                        <div class="flex flex-col gap-3">
+                            <div class="text-sm font-medium text-gray-600">Showtimes</div>
+                            <div>
+                            
+                                <div class="text-xs font-semibold text-gray-700"><a href="https://quadcinema.com">Quad Cinema</a></div>
+                                <div class="flex flex-wrap gap-2 mt-1">
+                                
+                                    <a href="http://www.fandango.com/quadcinema_aaefp/theaterpage?date=2025-04-06" class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">2025-04-06 15:50:00</a>
+                                
+                                    <a href="http://www.fandango.com/quadcinema_aaefp/theaterpage?date=2025-04-06" class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">2025-04-06 20:10:00</a>
+                                
+                                </div>
+                            
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <button class="w-full text-center text-blue-600 text-sm font-medium py-2 border border-blue-600 rounded-lg hover:bg-blue-50 transition">
+                                See showtimes for all dates
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="movie-wrapper mx-w-full self-start">
+                <div class="movie rounded w-full max-w-3xl ml-auto mr-auto bg-white shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col sm:flex-row overflow-hidden">
+                    
+                    <div class="image-wrapper p-1 mt-auto mb-auto sm:h-auto sm:flex-shrink-0">
+                        <img class="object-cover" 
+                            src="None" 
+                            alt="Poster">
+                    </div> 
+                    <div class="details p-4 flex-1 flex flex-col">
+                        <div class="mb-3">
+                            <div class="title text-2xl font-semibold text-gray-800">Palindromes: 20th Anniversary</div>
+                            <div class="text-sm text-gray-600 mt-2">
+                                <div>Director: <span class="text-gray-800 font-medium">None</span></div>
+                                <div>Runtime: <span class="text-gray-800 font-medium">None</span></div>
+                            </div>
+                        </div>
+                        <div class="border-t border-gray-300 my-2"></div>
+                        <div class="flex flex-col gap-3">
+                            <div class="text-sm font-medium text-gray-600">Showtimes</div>
+                            <div>
+                            
+                                <div class="text-xs font-semibold text-gray-700"><a href="https://metrograph.com/">Metrograph</a></div>
+                                <div class="flex flex-wrap gap-2 mt-1">
+                                
+                                    <a href="https://metrograph.com/film/?vista_film_id=9999004239" class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">2025-04-06 16:45:00</a>
+                                
+                                </div>
+                            
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <button class="w-full text-center text-blue-600 text-sm font-medium py-2 border border-blue-600 rounded-lg hover:bg-blue-50 transition">
+                                See showtimes for all dates
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="movie-wrapper mx-w-full self-start">
+                <div class="movie rounded w-full max-w-3xl ml-auto mr-auto bg-white shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col sm:flex-row overflow-hidden">
+                    
+                    <div class="image-wrapper p-1 mt-auto mb-auto sm:h-auto sm:flex-shrink-0">
+                        <img class="object-cover" 
+                            src="None" 
+                            alt="Poster">
+                    </div> 
+                    <div class="details p-4 flex-1 flex flex-col">
+                        <div class="mb-3">
+                            <div class="title text-2xl font-semibold text-gray-800">The Luckiest Man in America (Open Captioning)</div>
+                            <div class="text-sm text-gray-600 mt-2">
+                                <div>Director: <span class="text-gray-800 font-medium">None</span></div>
+                                <div>Runtime: <span class="text-gray-800 font-medium">None</span></div>
+                            </div>
+                        </div>
+                        <div class="border-t border-gray-300 my-2"></div>
+                        <div class="flex flex-col gap-3">
+                            <div class="text-sm font-medium text-gray-600">Showtimes</div>
+                            <div>
+                            
+                                <div class="text-xs font-semibold text-gray-700"><a href="https://www.ifccenter.com/">IFC Center</a></div>
+                                <div class="flex flex-wrap gap-2 mt-1">
+                                
+                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=489763~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">2025-04-06 19:30:00</a>
+                                
+                                </div>
+                            
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <button class="w-full text-center text-blue-600 text-sm font-medium py-2 border border-blue-600 rounded-lg hover:bg-blue-50 transition">
+                                See showtimes for all dates
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="movie-wrapper mx-w-full self-start">
+                <div class="movie rounded w-full max-w-3xl ml-auto mr-auto bg-white shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col sm:flex-row overflow-hidden">
+                    
+                    <div class="image-wrapper p-1 mt-auto mb-auto sm:h-auto sm:flex-shrink-0">
+                        <img class="object-cover" 
+                            src="https://image.tmdb.org/t/p/w200/9982mkMphAfTGrXbCiOkCwTGVug.jpg" 
+                            alt="Poster">
+                    </div> 
+                    <div class="details p-4 flex-1 flex flex-col">
+                        <div class="mb-3">
+                            <div class="title text-2xl font-semibold text-gray-800">The Wayward Cloud</div>
+                            <div class="text-sm text-gray-600 mt-2">
+                                <div>Director: <span class="text-gray-800 font-medium">Tsai Ming-liang</span></div>
+                                <div>Runtime: <span class="text-gray-800 font-medium">114</span></div>
+                            </div>
+                        </div>
+                        <div class="border-t border-gray-300 my-2"></div>
+                        <div class="flex flex-col gap-3">
+                            <div class="text-sm font-medium text-gray-600">Showtimes</div>
+                            <div>
+                            
+                                <div class="text-xs font-semibold text-gray-700"><a href="https://metrograph.com/">Metrograph</a></div>
+                                <div class="flex flex-wrap gap-2 mt-1">
+                                
+                                    <a href="https://metrograph.com/film/?vista_film_id=9999004240" class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">2025-04-06 19:30:00</a>
+                                
+                                </div>
+                            
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <button class="w-full text-center text-blue-600 text-sm font-medium py-2 border border-blue-600 rounded-lg hover:bg-blue-50 transition">
+                                See showtimes for all dates
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="movie-wrapper mx-w-full self-start">
+                <div class="movie rounded w-full max-w-3xl ml-auto mr-auto bg-white shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col sm:flex-row overflow-hidden">
+                    
+                    <div class="image-wrapper p-1 mt-auto mb-auto sm:h-auto sm:flex-shrink-0">
+                        <img class="object-cover" 
+                            src="https://image.tmdb.org/t/p/w200/1qTSeIYJ2cxD1BxddZHN7uOMJ4Y.jpg" 
+                            alt="Poster">
+                    </div> 
+                    <div class="details p-4 flex-1 flex flex-col">
+                        <div class="mb-3">
+                            <div class="title text-2xl font-semibold text-gray-800">Lovers Are Wet</div>
+                            <div class="text-sm text-gray-600 mt-2">
+                                <div>Director: <span class="text-gray-800 font-medium">Tatsumi Kumashiro</span></div>
+                                <div>Runtime: <span class="text-gray-800 font-medium">76</span></div>
+                            </div>
+                        </div>
+                        <div class="border-t border-gray-300 my-2"></div>
+                        <div class="flex flex-col gap-3">
+                            <div class="text-sm font-medium text-gray-600">Showtimes</div>
+                            <div>
+                            
+                                <div class="text-xs font-semibold text-gray-700"><a href="https://metrograph.com/">Metrograph</a></div>
+                                <div class="flex flex-wrap gap-2 mt-1">
+                                
+                                    <a href="https://metrograph.com/film/?vista_film_id=9999004238" class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">2025-04-06 20:00:00</a>
+                                
+                                </div>
+                            
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <button class="w-full text-center text-blue-600 text-sm font-medium py-2 border border-blue-600 rounded-lg hover:bg-blue-50 transition">
+                                See showtimes for all dates
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="movie-wrapper mx-w-full self-start">
+                <div class="movie rounded w-full max-w-3xl ml-auto mr-auto bg-white shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col sm:flex-row overflow-hidden">
+                    
+                    <div class="image-wrapper p-1 mt-auto mb-auto sm:h-auto sm:flex-shrink-0">
+                        <img class="object-cover" 
+                            src="None" 
+                            alt="Poster">
+                    </div> 
+                    <div class="details p-4 flex-1 flex flex-col">
+                        <div class="mb-3">
+                            <div class="title text-2xl font-semibold text-gray-800">Eephus (Open Captioning)</div>
+                            <div class="text-sm text-gray-600 mt-2">
+                                <div>Director: <span class="text-gray-800 font-medium">None</span></div>
+                                <div>Runtime: <span class="text-gray-800 font-medium">None</span></div>
+                            </div>
+                        </div>
+                        <div class="border-t border-gray-300 my-2"></div>
+                        <div class="flex flex-col gap-3">
+                            <div class="text-sm font-medium text-gray-600">Showtimes</div>
+                            <div>
+                            
+                                <div class="text-xs font-semibold text-gray-700"><a href="https://www.ifccenter.com/">IFC Center</a></div>
+                                <div class="flex flex-wrap gap-2 mt-1">
+                                
+                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=489741~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">2025-04-06 21:15:00</a>
+                                
+                                </div>
+                            
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <button class="w-full text-center text-blue-600 text-sm font-medium py-2 border border-blue-600 rounded-lg hover:bg-blue-50 transition">
+                                See showtimes for all dates
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="movie-wrapper mx-w-full self-start">
+                <div class="movie rounded w-full max-w-3xl ml-auto mr-auto bg-white shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col sm:flex-row overflow-hidden">
+                    
+                    <div class="image-wrapper p-1 mt-auto mb-auto sm:h-auto sm:flex-shrink-0">
+                        <img class="object-cover" 
+                            src="https://image.tmdb.org/t/p/w200/9ar6rxLDB8kagAnXZKn6h9smscr.jpg" 
+                            alt="Poster">
+                    </div> 
+                    <div class="details p-4 flex-1 flex flex-col">
+                        <div class="mb-3">
+                            <div class="title text-2xl font-semibold text-gray-800">Rope</div>
+                            <div class="text-sm text-gray-600 mt-2">
+                                <div>Director: <span class="text-gray-800 font-medium">Alfred Hitchcock</span></div>
+                                <div>Runtime: <span class="text-gray-800 font-medium">81</span></div>
+                            </div>
+                        </div>
+                        <div class="border-t border-gray-300 my-2"></div>
+                        <div class="flex flex-col gap-3">
+                            <div class="text-sm font-medium text-gray-600">Showtimes</div>
+                            <div>
+                            
+                                <div class="text-xs font-semibold text-gray-700"><a href="https://metrograph.com/">Metrograph</a></div>
+                                <div class="flex flex-wrap gap-2 mt-1">
+                                
+                                    <a href="https://metrograph.com/film/?vista_film_id=9999003530" class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">2025-04-06 22:00:00</a>
+                                
+                                </div>
+                            
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <button class="w-full text-center text-blue-600 text-sm font-medium py-2 border border-blue-600 rounded-lg hover:bg-blue-50 transition">
+                                See showtimes for all dates
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
         </div>
     </body>
 </html>

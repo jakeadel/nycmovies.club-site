@@ -2,7 +2,8 @@
     <head>
         <title>NYC MOVIES</title>
         <meta charset="UTF-8">
-        <meta namd="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="./styles/style.css" rel="stylesheet">
         <script>
             document.addEventListener("DOMContentLoaded", () => {
                 const today = new Date().toISOString().split("T")[0]; // Get YYYY-MM-DD format
@@ -26,6 +27,7 @@
                 });
 
                 // Add listeners for expanding showtimes
+                /*
                 document.querySelectorAll(".showtimes-button").forEach(button => {
                     button.addEventListener("click", () => {
                         const movieDiv = button.closest(".movie");
@@ -34,6 +36,7 @@
                         movieDiv.classList.toggle("expanded");
                     });
                 });
+                */
             });
         </script>
     </head>
@@ -47,30 +50,26 @@
             <input type="date" id="endDate">
         </div>
         <div class="content">
-            <div id="in-theaters-now" class="in-theaters-now font-bold text-center self-center ml-auto mt-10 mr-auto p-4 border-red-600 bg-orange-100 border-t-2 border-l-2 border-r-2 rounded-t-xl text-3xl w-fit">NOW PLAYING IN NYC</div>
-            <div id="movies" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 place-items-center items-start ml-10 mr-10 p-5 bg-orange-100 rounded-xl border-2 border-red-600">
+            <div id="in-theaters-now" class="in-theaters-now">NOW PLAYING IN NYC</div>
+            <div id="movies" class="movies">
             
-                <div class="movie flex flex-col h-full items-center max-w-[250px] w-[250px]" id="movie-105">
-                    <img class="image border-black border-6 w-full" src="https://image.tmdb.org/t/p/w200/jeoTppDMtxVW3KBWCFCuQfjyuy3.jpg" alt="Misericordia Poster">
-                    <h1 class="movie-title text-3xl font-bold text-center rounded-xs mt-1">Misericordia</h1>
-                    <button class="showtimes-button text-2xl text-center w-full hover:cursor-pointer mt-auto sm:mt-1 border-black border-1 font-semibold rounded-xs shadow-2xl bg-pink-100">
-                          Showtimes ^
+                <div class="movie" id="movie-8">
+                    <img class="image" src="https://image.tmdb.org/t/p/w200/c9vOIVfBW3Uk28frA48EMOJQuIR.jpg" alt="Psycho Therapy: The Shallow Tale of a Writer Who Decided to Write About a Serial Killer Poster">
+                    <h1 class="movie-title">Psycho Therapy: The Shallow Tale of a Writer Who Decided to Write About a Serial Killer</h1>
+                    <button class="showtimes-button">
+                        Showtimes ^
                     </button>
-                    <div class="theaters hidden overflow-y-scroll scrollbar border border-black w-full mt-1 rounded-xs scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100 max-h-50 bg-white">
+                    <div class="theaters">
                     
-                        <div class="theater border border-black-100 rounded-xs m-1 bg-pink-100">
-                            <a href="https://www.ifccenter.com/" class="theater underline text-lg font-bold pl-1">IFC Center</a>
-                            <div class="showtimes grid grid-cols-3 gap-2 text-m text-center">
+                        <div class="theater">
+                            <a href="https://www.ifccenter.com/" class="theater">IFC Center</a>
+                            <div class="showtimes">
                                 
-                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=488612~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="showtime underline text-m">2025-03-31 10:35:00</a>
+                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=489779~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="showtime">2025-04-06 10:35:00</a>
                                 
-                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=488612~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="showtime underline text-m">2025-03-31 13:40:00</a>
+                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=489779~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="showtime">2025-04-06 13:55:00</a>
                                 
-                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=488612~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="showtime underline text-m">2025-03-31 16:10:00</a>
-                                
-                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=488612~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="showtime underline text-m">2025-03-31 18:40:00</a>
-                                
-                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=488612~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="showtime underline text-m">2025-03-31 21:50:00</a>
+                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=489779~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="showtime">2025-04-06 18:45:00</a>
                                 
                             </div>
                         </div>
@@ -78,19 +77,21 @@
                     </div>
                 </div>
             
-                <div class="movie flex flex-col h-full items-center max-w-[250px] w-[250px]" id="movie-103">
-                    <img class="image border-black border-6 w-full" src="None" alt="Live Action Oscar-Nominated Shorts 2025 Poster">
-                    <h1 class="movie-title text-3xl font-bold text-center rounded-xs mt-1">Live Action Oscar-Nominated Shorts 2025</h1>
-                    <button class="showtimes-button text-2xl text-center w-full hover:cursor-pointer mt-auto sm:mt-1 border-black border-1 font-semibold rounded-xs shadow-2xl bg-pink-100">
-                          Showtimes ^
+                <div class="movie" id="movie-2">
+                    <img class="image" src="https://image.tmdb.org/t/p/w200/zDdzvIVGkAUfUMi7mJykgEu5ynu.jpg" alt="Eephus Poster">
+                    <h1 class="movie-title">Eephus</h1>
+                    <button class="showtimes-button">
+                        Showtimes ^
                     </button>
-                    <div class="theaters hidden overflow-y-scroll scrollbar border border-black w-full mt-1 rounded-xs scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100 max-h-50 bg-white">
+                    <div class="theaters">
                     
-                        <div class="theater border border-black-100 rounded-xs m-1 bg-pink-100">
-                            <a href="https://www.ifccenter.com/" class="theater underline text-lg font-bold pl-1">IFC Center</a>
-                            <div class="showtimes grid grid-cols-3 gap-2 text-m text-center">
+                        <div class="theater">
+                            <a href="https://www.ifccenter.com/" class="theater">IFC Center</a>
+                            <div class="showtimes">
                                 
-                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=488615~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="showtime underline text-m">2025-03-31 10:45:00</a>
+                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=489740~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="showtime">2025-04-06 10:40:00</a>
+                                
+                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=489740~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="showtime">2025-04-06 16:20:00</a>
                                 
                             </div>
                         </div>
@@ -98,23 +99,19 @@
                     </div>
                 </div>
             
-                <div class="movie flex flex-col h-full items-center max-w-[250px] w-[250px]" id="movie-110">
-                    <img class="image border-black border-6 w-full" src="https://image.tmdb.org/t/p/w200/zQLkQvbSmey76CEKuJkxfrNGwlU.jpg" alt="Janis Ian: Breaking Silence Poster">
-                    <h1 class="movie-title text-3xl font-bold text-center rounded-xs mt-1">Janis Ian: Breaking Silence</h1>
-                    <button class="showtimes-button text-2xl text-center w-full hover:cursor-pointer mt-auto sm:mt-1 border-black border-1 font-semibold rounded-xs shadow-2xl bg-pink-100">
-                          Showtimes ^
+                <div class="movie" id="movie-4">
+                    <img class="image" src="https://image.tmdb.org/t/p/w200/zQLkQvbSmey76CEKuJkxfrNGwlU.jpg" alt="Janis Ian: Breaking Silence Poster">
+                    <h1 class="movie-title">Janis Ian: Breaking Silence</h1>
+                    <button class="showtimes-button">
+                        Showtimes ^
                     </button>
-                    <div class="theaters hidden overflow-y-scroll scrollbar border border-black w-full mt-1 rounded-xs scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100 max-h-50 bg-white">
+                    <div class="theaters">
                     
-                        <div class="theater border border-black-100 rounded-xs m-1 bg-pink-100">
-                            <a href="https://www.ifccenter.com/" class="theater underline text-lg font-bold pl-1">IFC Center</a>
-                            <div class="showtimes grid grid-cols-3 gap-2 text-m text-center">
+                        <div class="theater">
+                            <a href="https://www.ifccenter.com/" class="theater">IFC Center</a>
+                            <div class="showtimes">
                                 
-                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=488629~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="showtime underline text-m">2025-03-31 10:55:00</a>
-                                
-                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=488629~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="showtime underline text-m">2025-03-31 13:15:00</a>
-                                
-                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=488629~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="showtime underline text-m">2025-03-31 21:10:00</a>
+                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=488165~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="showtime">2025-04-06 11:00:00</a>
                                 
                             </div>
                         </div>
@@ -122,27 +119,23 @@
                     </div>
                 </div>
             
-                <div class="movie flex flex-col h-full items-center max-w-[250px] w-[250px]" id="movie-109">
-                    <img class="image border-black border-6 w-full" src="https://image.tmdb.org/t/p/w200/bOQiDyhW1HXeAeFgsmGu2xpWcqX.jpg" alt="Secret Mall Apartment Poster">
-                    <h1 class="movie-title text-3xl font-bold text-center rounded-xs mt-1">Secret Mall Apartment</h1>
-                    <button class="showtimes-button text-2xl text-center w-full hover:cursor-pointer mt-auto sm:mt-1 border-black border-1 font-semibold rounded-xs shadow-2xl bg-pink-100">
-                          Showtimes ^
+                <div class="movie" id="movie-13">
+                    <img class="image" src="https://image.tmdb.org/t/p/w200/qTg05RNJIvb9w4Z7XIcAZxuZmTn.jpg" alt="High Art Poster">
+                    <h1 class="movie-title">High Art</h1>
+                    <button class="showtimes-button">
+                        Showtimes ^
                     </button>
-                    <div class="theaters hidden overflow-y-scroll scrollbar border border-black w-full mt-1 rounded-xs scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100 max-h-50 bg-white">
+                    <div class="theaters">
                     
-                        <div class="theater border border-black-100 rounded-xs m-1 bg-pink-100">
-                            <a href="https://www.ifccenter.com/" class="theater underline text-lg font-bold pl-1">IFC Center</a>
-                            <div class="showtimes grid grid-cols-3 gap-2 text-m text-center">
+                        <div class="theater">
+                            <a href="https://www.ifccenter.com/" class="theater">IFC Center</a>
+                            <div class="showtimes">
                                 
-                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=488611~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="showtime underline text-m">2025-03-31 11:25:00</a>
+                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=488162~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="showtime">2025-04-06 11:15:00</a>
                                 
-                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=488611~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="showtime underline text-m">2025-03-31 13:45:00</a>
+                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=488162~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="showtime">2025-04-06 16:30:00</a>
                                 
-                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=488611~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="showtime underline text-m">2025-03-31 16:15:00</a>
-                                
-                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=488611~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="showtime underline text-m">2025-03-31 18:45:00</a>
-                                
-                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=488611~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="showtime underline text-m">2025-03-31 21:05:00</a>
+                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=488162~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="showtime">2025-04-06 19:00:00</a>
                                 
                             </div>
                         </div>
@@ -150,19 +143,23 @@
                     </div>
                 </div>
             
-                <div class="movie flex flex-col h-full items-center max-w-[250px] w-[250px]" id="movie-99">
-                    <img class="image border-black border-6 w-full" src="None" alt="Animated Oscar-Nominated Shorts 2025 Poster">
-                    <h1 class="movie-title text-3xl font-bold text-center rounded-xs mt-1">Animated Oscar-Nominated Shorts 2025</h1>
-                    <button class="showtimes-button text-2xl text-center w-full hover:cursor-pointer mt-auto sm:mt-1 border-black border-1 font-semibold rounded-xs shadow-2xl bg-pink-100">
-                          Showtimes ^
+                <div class="movie" id="movie-7">
+                    <img class="image" src="https://image.tmdb.org/t/p/w200/jeoTppDMtxVW3KBWCFCuQfjyuy3.jpg" alt="Misericordia Poster">
+                    <h1 class="movie-title">Misericordia</h1>
+                    <button class="showtimes-button">
+                        Showtimes ^
                     </button>
-                    <div class="theaters hidden overflow-y-scroll scrollbar border border-black w-full mt-1 rounded-xs scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100 max-h-50 bg-white">
+                    <div class="theaters">
                     
-                        <div class="theater border border-black-100 rounded-xs m-1 bg-pink-100">
-                            <a href="https://www.ifccenter.com/" class="theater underline text-lg font-bold pl-1">IFC Center</a>
-                            <div class="showtimes grid grid-cols-3 gap-2 text-m text-center">
+                        <div class="theater">
+                            <a href="https://www.ifccenter.com/" class="theater">IFC Center</a>
+                            <div class="showtimes">
                                 
-                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=488610~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="showtime underline text-m">2025-03-31 11:30:00</a>
+                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=489764~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="showtime">2025-04-06 11:30:00</a>
+                                
+                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=489764~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="showtime">2025-04-06 16:10:00</a>
+                                
+                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=489764~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="showtime">2025-04-06 21:05:00</a>
                                 
                             </div>
                         </div>
@@ -170,25 +167,19 @@
                     </div>
                 </div>
             
-                <div class="movie flex flex-col h-full items-center max-w-[250px] w-[250px]" id="movie-112">
-                    <img class="image border-black border-6 w-full" src="https://image.tmdb.org/t/p/w200/axtvB6qoORMZQ2qPZdaFcBOM8g3.jpg" alt="Viet and Nam Poster">
-                    <h1 class="movie-title text-3xl font-bold text-center rounded-xs mt-1">Viet and Nam</h1>
-                    <button class="showtimes-button text-2xl text-center w-full hover:cursor-pointer mt-auto sm:mt-1 border-black border-1 font-semibold rounded-xs shadow-2xl bg-pink-100">
-                          Showtimes ^
+                <div class="movie" id="movie-58">
+                    <img class="image" src="https://image.tmdb.org/t/p/w200/19hyCudualHxCD0GrEngqsi0wBF.jpg" alt="Amour Poster">
+                    <h1 class="movie-title">Amour</h1>
+                    <button class="showtimes-button">
+                        Showtimes ^
                     </button>
-                    <div class="theaters hidden overflow-y-scroll scrollbar border border-black w-full mt-1 rounded-xs scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100 max-h-50 bg-white">
+                    <div class="theaters">
                     
-                        <div class="theater border border-black-100 rounded-xs m-1 bg-pink-100">
-                            <a href="https://www.ifccenter.com/" class="theater underline text-lg font-bold pl-1">IFC Center</a>
-                            <div class="showtimes grid grid-cols-3 gap-2 text-m text-center">
+                        <div class="theater">
+                            <a href="https://metrograph.com/" class="theater">Metrograph</a>
+                            <div class="showtimes">
                                 
-                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=488617~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="showtime underline text-m">2025-03-31 12:40:00</a>
-                                
-                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=488617~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="showtime underline text-m">2025-03-31 15:35:00</a>
-                                
-                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=488617~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="showtime underline text-m">2025-03-31 18:30:00</a>
-                                
-                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=488617~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="showtime underline text-m">2025-03-31 21:25:00</a>
+                                    <a href="https://metrograph.com/film/?vista_film_id=9999001734" class="showtime">2025-04-06 11:30:00</a>
                                 
                             </div>
                         </div>
@@ -196,19 +187,19 @@
                     </div>
                 </div>
             
-                <div class="movie flex flex-col h-full items-center max-w-[250px] w-[250px]" id="movie-102">
-                    <img class="image border-black border-6 w-full" src="None" alt="Eephus (Open Captioning) Poster">
-                    <h1 class="movie-title text-3xl font-bold text-center rounded-xs mt-1">Eephus (Open Captioning)</h1>
-                    <button class="showtimes-button text-2xl text-center w-full hover:cursor-pointer mt-auto sm:mt-1 border-black border-1 font-semibold rounded-xs shadow-2xl bg-pink-100">
-                          Showtimes ^
+                <div class="movie" id="movie-59">
+                    <img class="image" src="https://image.tmdb.org/t/p/w200/7V8U8hiLlwyjOmsGgvy7KlrQxTR.jpg" alt="Wicked Games - Rimini Sparta Poster">
+                    <h1 class="movie-title">Wicked Games - Rimini Sparta</h1>
+                    <button class="showtimes-button">
+                        Showtimes ^
                     </button>
-                    <div class="theaters hidden overflow-y-scroll scrollbar border border-black w-full mt-1 rounded-xs scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100 max-h-50 bg-white">
+                    <div class="theaters">
                     
-                        <div class="theater border border-black-100 rounded-xs m-1 bg-pink-100">
-                            <a href="https://www.ifccenter.com/" class="theater underline text-lg font-bold pl-1">IFC Center</a>
-                            <div class="showtimes grid grid-cols-3 gap-2 text-m text-center">
+                        <div class="theater">
+                            <a href="https://metrograph.com/" class="theater">Metrograph</a>
+                            <div class="showtimes">
                                 
-                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=488624~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="showtime underline text-m">2025-03-31 12:55:00</a>
+                                    <a href="https://metrograph.com/film/?vista_film_id=9999004214" class="showtime">2025-04-06 12:00:00</a>
                                 
                             </div>
                         </div>
@@ -216,23 +207,27 @@
                     </div>
                 </div>
             
-                <div class="movie flex flex-col h-full items-center max-w-[250px] w-[250px]" id="movie-84">
-                    <img class="image border-black border-6 w-full" src="https://image.tmdb.org/t/p/w200/edKpE9B5qN3e559OuMCLZdW1iBZ.jpg" alt="Mickey 17 Poster">
-                    <h1 class="movie-title text-3xl font-bold text-center rounded-xs mt-1">Mickey 17</h1>
-                    <button class="showtimes-button text-2xl text-center w-full hover:cursor-pointer mt-auto sm:mt-1 border-black border-1 font-semibold rounded-xs shadow-2xl bg-pink-100">
-                          Showtimes ^
+                <div class="movie" id="movie-9">
+                    <img class="image" src="https://image.tmdb.org/t/p/w200/nc6ZQMlQrCq03d1WXyYaeUXRlCY.jpg" alt="Secret Mall Apartment Poster">
+                    <h1 class="movie-title">Secret Mall Apartment</h1>
+                    <button class="showtimes-button">
+                        Showtimes ^
                     </button>
-                    <div class="theaters hidden overflow-y-scroll scrollbar border border-black w-full mt-1 rounded-xs scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100 max-h-50 bg-white">
+                    <div class="theaters">
                     
-                        <div class="theater border border-black-100 rounded-xs m-1 bg-pink-100">
-                            <a href="https://quadcinema.com" class="theater underline text-lg font-bold pl-1">Quad Cinema</a>
-                            <div class="showtimes grid grid-cols-3 gap-2 text-m text-center">
+                        <div class="theater">
+                            <a href="https://www.ifccenter.com/" class="theater">IFC Center</a>
+                            <div class="showtimes">
                                 
-                                    <a href="http://www.fandango.com/quadcinema_aaefp/theaterpage?date=2025-03-31" class="showtime underline text-m">2025-03-31 13:00:00</a>
+                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=489888~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="showtime">2025-04-06 12:40:00</a>
                                 
-                                    <a href="http://www.fandango.com/quadcinema_aaefp/theaterpage?date=2025-03-31" class="showtime underline text-m">2025-03-31 16:00:00</a>
+                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=489888~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="showtime">2025-04-06 14:55:00</a>
                                 
-                                    <a href="http://www.fandango.com/quadcinema_aaefp/theaterpage?date=2025-03-31" class="showtime underline text-m">2025-03-31 19:00:00</a>
+                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=489888~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="showtime">2025-04-06 17:10:00</a>
+                                
+                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=489888~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="showtime">2025-04-06 19:25:00</a>
+                                
+                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=489888~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="showtime">2025-04-06 21:40:00</a>
                                 
                             </div>
                         </div>
@@ -240,23 +235,25 @@
                     </div>
                 </div>
             
-                <div class="movie flex flex-col h-full items-center max-w-[250px] w-[250px]" id="movie-81">
-                    <img class="image border-black border-6 w-full" src="https://image.tmdb.org/t/p/w200/AtBV9COCzgKvmmyDFXTEAh79wYD.jpg" alt="Being Maria Poster">
-                    <h1 class="movie-title text-3xl font-bold text-center rounded-xs mt-1">Being Maria</h1>
-                    <button class="showtimes-button text-2xl text-center w-full hover:cursor-pointer mt-auto sm:mt-1 border-black border-1 font-semibold rounded-xs shadow-2xl bg-pink-100">
-                          Showtimes ^
+                <div class="movie" id="movie-15">
+                    <img class="image" src="https://image.tmdb.org/t/p/w200/etJwfiUR0gtQwH8shhwjRr5bARQ.jpg" alt="The Luckiest Man in America Poster">
+                    <h1 class="movie-title">The Luckiest Man in America</h1>
+                    <button class="showtimes-button">
+                        Showtimes ^
                     </button>
-                    <div class="theaters hidden overflow-y-scroll scrollbar border border-black w-full mt-1 rounded-xs scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100 max-h-50 bg-white">
+                    <div class="theaters">
                     
-                        <div class="theater border border-black-100 rounded-xs m-1 bg-pink-100">
-                            <a href="https://quadcinema.com" class="theater underline text-lg font-bold pl-1">Quad Cinema</a>
-                            <div class="showtimes grid grid-cols-3 gap-2 text-m text-center">
+                        <div class="theater">
+                            <a href="https://www.ifccenter.com/" class="theater">IFC Center</a>
+                            <div class="showtimes">
                                 
-                                    <a href="http://www.fandango.com/quadcinema_aaefp/theaterpage?date=2025-03-31" class="showtime underline text-m">2025-03-31 14:50:00</a>
+                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=489762~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="showtime">2025-04-06 12:45:00</a>
                                 
-                                    <a href="http://www.fandango.com/quadcinema_aaefp/theaterpage?date=2025-03-31" class="showtime underline text-m">2025-03-31 17:00:00</a>
+                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=489762~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="showtime">2025-04-06 15:00:00</a>
                                 
-                                    <a href="http://www.fandango.com/quadcinema_aaefp/theaterpage?date=2025-03-31" class="showtime underline text-m">2025-03-31 19:25:00</a>
+                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=489762~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="showtime">2025-04-06 17:15:00</a>
+                                
+                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=489762~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="showtime">2025-04-06 21:45:00</a>
                                 
                             </div>
                         </div>
@@ -264,21 +261,25 @@
                     </div>
                 </div>
             
-                <div class="movie flex flex-col h-full items-center max-w-[250px] w-[250px]" id="movie-82">
-                    <img class="image border-black border-6 w-full" src="https://image.tmdb.org/t/p/w200/m5x8D0bZ3eKqIVWZ5y7TnZ2oTVg.jpg" alt="Conclave Poster">
-                    <h1 class="movie-title text-3xl font-bold text-center rounded-xs mt-1">Conclave</h1>
-                    <button class="showtimes-button text-2xl text-center w-full hover:cursor-pointer mt-auto sm:mt-1 border-black border-1 font-semibold rounded-xs shadow-2xl bg-pink-100">
-                          Showtimes ^
+                <div class="movie" id="movie-30">
+                    <img class="image" src="https://image.tmdb.org/t/p/w200/uXFU9rEfp3loRrUX80j1xM0Pcjm.jpg" alt="The Hermit of Treig Poster">
+                    <h1 class="movie-title">The Hermit of Treig</h1>
+                    <button class="showtimes-button">
+                        Showtimes ^
                     </button>
-                    <div class="theaters hidden overflow-y-scroll scrollbar border border-black w-full mt-1 rounded-xs scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100 max-h-50 bg-white">
+                    <div class="theaters">
                     
-                        <div class="theater border border-black-100 rounded-xs m-1 bg-pink-100">
-                            <a href="https://quadcinema.com" class="theater underline text-lg font-bold pl-1">Quad Cinema</a>
-                            <div class="showtimes grid grid-cols-3 gap-2 text-m text-center">
+                        <div class="theater">
+                            <a href="https://quadcinema.com" class="theater">Quad Cinema</a>
+                            <div class="showtimes">
                                 
-                                    <a href="http://www.fandango.com/quadcinema_aaefp/theaterpage?date=2025-03-31" class="showtime underline text-m">2025-03-31 14:50:00</a>
+                                    <a href="http://www.fandango.com/quadcinema_aaefp/theaterpage?date=2025-04-06" class="showtime">2025-04-06 13:15:00</a>
                                 
-                                    <a href="http://www.fandango.com/quadcinema_aaefp/theaterpage?date=2025-03-31" class="showtime underline text-m">2025-03-31 19:15:00</a>
+                                    <a href="http://www.fandango.com/quadcinema_aaefp/theaterpage?date=2025-04-06" class="showtime">2025-04-06 15:15:00</a>
+                                
+                                    <a href="http://www.fandango.com/quadcinema_aaefp/theaterpage?date=2025-04-06" class="showtime">2025-04-06 18:15:00</a>
+                                
+                                    <a href="http://www.fandango.com/quadcinema_aaefp/theaterpage?date=2025-04-06" class="showtime">2025-04-06 20:15:00</a>
                                 
                             </div>
                         </div>
@@ -286,23 +287,21 @@
                     </div>
                 </div>
             
-                <div class="movie flex flex-col h-full items-center max-w-[250px] w-[250px]" id="movie-88">
-                    <img class="image border-black border-6 w-full" src="https://image.tmdb.org/t/p/w200/wLsUb4RVAaDglz8axndpXEBjdho.jpg" alt="Thank You Very Much Poster">
-                    <h1 class="movie-title text-3xl font-bold text-center rounded-xs mt-1">Thank You Very Much</h1>
-                    <button class="showtimes-button text-2xl text-center w-full hover:cursor-pointer mt-auto sm:mt-1 border-black border-1 font-semibold rounded-xs shadow-2xl bg-pink-100">
-                          Showtimes ^
+                <div class="movie" id="movie-11">
+                    <img class="image" src="https://image.tmdb.org/t/p/w200/axtvB6qoORMZQ2qPZdaFcBOM8g3.jpg" alt="Viet and Nam Poster">
+                    <h1 class="movie-title">Viet and Nam</h1>
+                    <button class="showtimes-button">
+                        Showtimes ^
                     </button>
-                    <div class="theaters hidden overflow-y-scroll scrollbar border border-black w-full mt-1 rounded-xs scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100 max-h-50 bg-white">
+                    <div class="theaters">
                     
-                        <div class="theater border border-black-100 rounded-xs m-1 bg-pink-100">
-                            <a href="https://quadcinema.com" class="theater underline text-lg font-bold pl-1">Quad Cinema</a>
-                            <div class="showtimes grid grid-cols-3 gap-2 text-m text-center">
+                        <div class="theater">
+                            <a href="https://www.ifccenter.com/" class="theater">IFC Center</a>
+                            <div class="showtimes">
                                 
-                                    <a href="http://www.fandango.com/quadcinema_aaefp/theaterpage?date=2025-03-31" class="showtime underline text-m">2025-03-31 15:05:00</a>
+                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=489889~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="showtime">2025-04-06 13:25:00</a>
                                 
-                                    <a href="http://www.fandango.com/quadcinema_aaefp/theaterpage?date=2025-03-31" class="showtime underline text-m">2025-03-31 17:20:00</a>
-                                
-                                    <a href="http://www.fandango.com/quadcinema_aaefp/theaterpage?date=2025-03-31" class="showtime underline text-m">2025-03-31 19:30:00</a>
+                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=489889~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="showtime">2025-04-06 18:30:00</a>
                                 
                             </div>
                         </div>
@@ -310,23 +309,21 @@
                     </div>
                 </div>
             
-                <div class="movie flex flex-col h-full items-center max-w-[250px] w-[250px]" id="movie-101">
-                    <img class="image border-black border-6 w-full" src="https://image.tmdb.org/t/p/w200/zDdzvIVGkAUfUMi7mJykgEu5ynu.jpg" alt="Eephus Poster">
-                    <h1 class="movie-title text-3xl font-bold text-center rounded-xs mt-1">Eephus</h1>
-                    <button class="showtimes-button text-2xl text-center w-full hover:cursor-pointer mt-auto sm:mt-1 border-black border-1 font-semibold rounded-xs shadow-2xl bg-pink-100">
-                          Showtimes ^
+                <div class="movie" id="movie-26">
+                    <img class="image" src="https://image.tmdb.org/t/p/w200/AtBV9COCzgKvmmyDFXTEAh79wYD.jpg" alt="Being Maria Poster">
+                    <h1 class="movie-title">Being Maria</h1>
+                    <button class="showtimes-button">
+                        Showtimes ^
                     </button>
-                    <div class="theaters hidden overflow-y-scroll scrollbar border border-black w-full mt-1 rounded-xs scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100 max-h-50 bg-white">
+                    <div class="theaters">
                     
-                        <div class="theater border border-black-100 rounded-xs m-1 bg-pink-100">
-                            <a href="https://www.ifccenter.com/" class="theater underline text-lg font-bold pl-1">IFC Center</a>
-                            <div class="showtimes grid grid-cols-3 gap-2 text-m text-center">
+                        <div class="theater">
+                            <a href="https://quadcinema.com" class="theater">Quad Cinema</a>
+                            <div class="showtimes">
                                 
-                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=488620~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="showtime underline text-m">2025-03-31 15:10:00</a>
+                                    <a href="http://www.fandango.com/quadcinema_aaefp/theaterpage?date=2025-04-06" class="showtime">2025-04-06 13:35:00</a>
                                 
-                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=488620~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="showtime underline text-m">2025-03-31 17:25:00</a>
-                                
-                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=488620~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="showtime underline text-m">2025-03-31 19:40:00</a>
+                                    <a href="http://www.fandango.com/quadcinema_aaefp/theaterpage?date=2025-04-06" class="showtime">2025-04-06 18:00:00</a>
                                 
                             </div>
                         </div>
@@ -334,21 +331,21 @@
                     </div>
                 </div>
             
-                <div class="movie flex flex-col h-full items-center max-w-[250px] w-[250px]" id="movie-104">
-                    <img class="image border-black border-6 w-full" src="https://image.tmdb.org/t/p/w200/nA1WbYl6Sllm71g8koNXhjWbMOc.jpg" alt="Love & Pop Poster">
-                    <h1 class="movie-title text-3xl font-bold text-center rounded-xs mt-1">Love & Pop</h1>
-                    <button class="showtimes-button text-2xl text-center w-full hover:cursor-pointer mt-auto sm:mt-1 border-black border-1 font-semibold rounded-xs shadow-2xl bg-pink-100">
-                          Showtimes ^
+                <div class="movie" id="movie-3">
+                    <img class="image" src="https://image.tmdb.org/t/p/w200/rk2lKgEtjF9HO9N2UFMRc2cMGdj.jpg" alt="The Elephant Man Poster">
+                    <h1 class="movie-title">The Elephant Man</h1>
+                    <button class="showtimes-button">
+                        Showtimes ^
                     </button>
-                    <div class="theaters hidden overflow-y-scroll scrollbar border border-black w-full mt-1 rounded-xs scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100 max-h-50 bg-white">
+                    <div class="theaters">
                     
-                        <div class="theater border border-black-100 rounded-xs m-1 bg-pink-100">
-                            <a href="https://www.ifccenter.com/" class="theater underline text-lg font-bold pl-1">IFC Center</a>
-                            <div class="showtimes grid grid-cols-3 gap-2 text-m text-center">
+                        <div class="theater">
+                            <a href="https://www.ifccenter.com/" class="theater">IFC Center</a>
+                            <div class="showtimes">
                                 
-                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=488608~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="showtime underline text-m">2025-03-31 15:50:00</a>
+                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=489753~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="showtime">2025-04-06 13:40:00</a>
                                 
-                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=488608~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="showtime underline text-m">2025-03-31 21:30:00</a>
+                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=489753~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="showtime">2025-04-06 21:30:00</a>
                                 
                             </div>
                         </div>
@@ -356,19 +353,25 @@
                     </div>
                 </div>
             
-                <div class="movie flex flex-col h-full items-center max-w-[250px] w-[250px]" id="movie-23">
-                    <img class="image border-black border-6 w-full" src="https://image.tmdb.org/t/p/w200/43I9DcNoCzpyzK8JCkJYpHqHqGG.jpg" alt="Chungking Express Poster">
-                    <h1 class="movie-title text-3xl font-bold text-center rounded-xs mt-1">Chungking Express</h1>
-                    <button class="showtimes-button text-2xl text-center w-full hover:cursor-pointer mt-auto sm:mt-1 border-black border-1 font-semibold rounded-xs shadow-2xl bg-pink-100">
-                          Showtimes ^
+                <div class="movie" id="movie-29">
+                    <img class="image" src="https://image.tmdb.org/t/p/w200/8YblIhRUmyl11Fy9A3pugJzUU9R.jpg" alt="A Nice Indian Boy Poster">
+                    <h1 class="movie-title">A Nice Indian Boy</h1>
+                    <button class="showtimes-button">
+                        Showtimes ^
                     </button>
-                    <div class="theaters hidden overflow-y-scroll scrollbar border border-black w-full mt-1 rounded-xs scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100 max-h-50 bg-white">
+                    <div class="theaters">
                     
-                        <div class="theater border border-black-100 rounded-xs m-1 bg-pink-100">
-                            <a href="https://metrograph.com/" class="theater underline text-lg font-bold pl-1">Metrograph</a>
-                            <div class="showtimes grid grid-cols-3 gap-2 text-m text-center">
+                        <div class="theater">
+                            <a href="https://quadcinema.com" class="theater">Quad Cinema</a>
+                            <div class="showtimes">
                                 
-                                    <a href="https://metrograph.com/film/?vista_film_id=9999000735" class="showtime underline text-m">2025-03-31 16:45:00</a>
+                                    <a href="http://www.fandango.com/quadcinema_aaefp/theaterpage?date=2025-04-06" class="showtime">2025-04-06 13:45:00</a>
+                                
+                                    <a href="http://www.fandango.com/quadcinema_aaefp/theaterpage?date=2025-04-06" class="showtime">2025-04-06 16:05:00</a>
+                                
+                                    <a href="http://www.fandango.com/quadcinema_aaefp/theaterpage?date=2025-04-06" class="showtime">2025-04-06 18:05:00</a>
+                                
+                                    <a href="http://www.fandango.com/quadcinema_aaefp/theaterpage?date=2025-04-06" class="showtime">2025-04-06 20:05:00</a>
                                 
                             </div>
                         </div>
@@ -376,19 +379,19 @@
                     </div>
                 </div>
             
-                <div class="movie flex flex-col h-full items-center max-w-[250px] w-[250px]" id="movie-85">
-                    <img class="image border-black border-6 w-full" src="https://image.tmdb.org/t/p/w200/2rhKie0az1PKlWvVY3oBGNisF2N.jpg" alt="Seven Veils Poster">
-                    <h1 class="movie-title text-3xl font-bold text-center rounded-xs mt-1">Seven Veils</h1>
-                    <button class="showtimes-button text-2xl text-center w-full hover:cursor-pointer mt-auto sm:mt-1 border-black border-1 font-semibold rounded-xs shadow-2xl bg-pink-100">
-                          Showtimes ^
+                <div class="movie" id="movie-60">
+                    <img class="image" src="https://image.tmdb.org/t/p/w200/qhjcjiLcPhB0kniRlQfIoGiILbn.jpg" alt="The Gospel According to St. Matthew Poster">
+                    <h1 class="movie-title">The Gospel According to St. Matthew</h1>
+                    <button class="showtimes-button">
+                        Showtimes ^
                     </button>
-                    <div class="theaters hidden overflow-y-scroll scrollbar border border-black w-full mt-1 rounded-xs scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100 max-h-50 bg-white">
+                    <div class="theaters">
                     
-                        <div class="theater border border-black-100 rounded-xs m-1 bg-pink-100">
-                            <a href="https://quadcinema.com" class="theater underline text-lg font-bold pl-1">Quad Cinema</a>
-                            <div class="showtimes grid grid-cols-3 gap-2 text-m text-center">
+                        <div class="theater">
+                            <a href="https://metrograph.com/" class="theater">Metrograph</a>
+                            <div class="showtimes">
                                 
-                                    <a href="http://www.fandango.com/quadcinema_aaefp/theaterpage?date=2025-03-31" class="showtime underline text-m">2025-03-31 17:10:00</a>
+                                    <a href="https://metrograph.com/film/?vista_film_id=9999002039" class="showtime">2025-04-06 14:00:00</a>
                                 
                             </div>
                         </div>
@@ -396,19 +399,19 @@
                     </div>
                 </div>
             
-                <div class="movie flex flex-col h-full items-center max-w-[250px] w-[250px]" id="movie-113">
-                    <img class="image border-black border-6 w-full" src="https://image.tmdb.org/t/p/w200/vRTBTIj3LgsiTXMiJ32mfu7WY4T.jpg" alt="National Theatre Live: Dr. Strangelove Poster">
-                    <h1 class="movie-title text-3xl font-bold text-center rounded-xs mt-1">National Theatre Live: Dr. Strangelove</h1>
-                    <button class="showtimes-button text-2xl text-center w-full hover:cursor-pointer mt-auto sm:mt-1 border-black border-1 font-semibold rounded-xs shadow-2xl bg-pink-100">
-                          Showtimes ^
+                <div class="movie" id="movie-48">
+                    <img class="image" src="https://image.tmdb.org/t/p/w200/8HKA3Hwf8jQWy8TCYWr7C8Wft23.jpg" alt="First Reformed Poster">
+                    <h1 class="movie-title">First Reformed</h1>
+                    <button class="showtimes-button">
+                        Showtimes ^
                     </button>
-                    <div class="theaters hidden overflow-y-scroll scrollbar border border-black w-full mt-1 rounded-xs scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100 max-h-50 bg-white">
+                    <div class="theaters">
                     
-                        <div class="theater border border-black-100 rounded-xs m-1 bg-pink-100">
-                            <a href="https://www.ifccenter.com/" class="theater underline text-lg font-bold pl-1">IFC Center</a>
-                            <div class="showtimes grid grid-cols-3 gap-2 text-m text-center">
+                        <div class="theater">
+                            <a href="https://metrograph.com/" class="theater">Metrograph</a>
+                            <div class="showtimes">
                                 
-                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=488628~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="showtime underline text-m">2025-03-31 18:30:00</a>
+                                    <a href="https://metrograph.com/film/?vista_film_id=9999001717" class="showtime">2025-04-06 15:45:00</a>
                                 
                             </div>
                         </div>
@@ -416,19 +419,21 @@
                     </div>
                 </div>
             
-                <div class="movie flex flex-col h-full items-center max-w-[250px] w-[250px]" id="movie-14">
-                    <img class="image border-black border-6 w-full" src="https://image.tmdb.org/t/p/w200/xF4oCG3PLNbcrtPZbqB3BtkIbKg.jpg" alt="Nights of Cabiria Poster">
-                    <h1 class="movie-title text-3xl font-bold text-center rounded-xs mt-1">Nights of Cabiria</h1>
-                    <button class="showtimes-button text-2xl text-center w-full hover:cursor-pointer mt-auto sm:mt-1 border-black border-1 font-semibold rounded-xs shadow-2xl bg-pink-100">
-                          Showtimes ^
+                <div class="movie" id="movie-28">
+                    <img class="image" src="https://image.tmdb.org/t/p/w200/wLsUb4RVAaDglz8axndpXEBjdho.jpg" alt="Thank You Very Much Poster">
+                    <h1 class="movie-title">Thank You Very Much</h1>
+                    <button class="showtimes-button">
+                        Showtimes ^
                     </button>
-                    <div class="theaters hidden overflow-y-scroll scrollbar border border-black w-full mt-1 rounded-xs scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100 max-h-50 bg-white">
+                    <div class="theaters">
                     
-                        <div class="theater border border-black-100 rounded-xs m-1 bg-pink-100">
-                            <a href="https://metrograph.com/" class="theater underline text-lg font-bold pl-1">Metrograph</a>
-                            <div class="showtimes grid grid-cols-3 gap-2 text-m text-center">
+                        <div class="theater">
+                            <a href="https://quadcinema.com" class="theater">Quad Cinema</a>
+                            <div class="showtimes">
                                 
-                                    <a href="https://metrograph.com/film/?vista_film_id=9999004206" class="showtime underline text-m">2025-03-31 19:00:00</a>
+                                    <a href="http://www.fandango.com/quadcinema_aaefp/theaterpage?date=2025-04-06" class="showtime">2025-04-06 15:50:00</a>
+                                
+                                    <a href="http://www.fandango.com/quadcinema_aaefp/theaterpage?date=2025-04-06" class="showtime">2025-04-06 20:10:00</a>
                                 
                             </div>
                         </div>
@@ -436,19 +441,19 @@
                     </div>
                 </div>
             
-                <div class="movie flex flex-col h-full items-center max-w-[250px] w-[250px]" id="movie-28">
-                    <img class="image border-black border-6 w-full" src="https://image.tmdb.org/t/p/w200/HscPMTxowVUG4I20uWEdnD3PaT.jpg" alt="Julie Keeps Quiet Poster">
-                    <h1 class="movie-title text-3xl font-bold text-center rounded-xs mt-1">Julie Keeps Quiet</h1>
-                    <button class="showtimes-button text-2xl text-center w-full hover:cursor-pointer mt-auto sm:mt-1 border-black border-1 font-semibold rounded-xs shadow-2xl bg-pink-100">
-                          Showtimes ^
+                <div class="movie" id="movie-61">
+                    <img class="image" src="None" alt="Palindromes: 20th Anniversary Poster">
+                    <h1 class="movie-title">Palindromes: 20th Anniversary</h1>
+                    <button class="showtimes-button">
+                        Showtimes ^
                     </button>
-                    <div class="theaters hidden overflow-y-scroll scrollbar border border-black w-full mt-1 rounded-xs scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100 max-h-50 bg-white">
+                    <div class="theaters">
                     
-                        <div class="theater border border-black-100 rounded-xs m-1 bg-pink-100">
-                            <a href="https://metrograph.com/" class="theater underline text-lg font-bold pl-1">Metrograph</a>
-                            <div class="showtimes grid grid-cols-3 gap-2 text-m text-center">
+                        <div class="theater">
+                            <a href="https://metrograph.com/" class="theater">Metrograph</a>
+                            <div class="showtimes">
                                 
-                                    <a href="https://metrograph.com/film/?vista_film_id=9999004184" class="showtime underline text-m">2025-03-31 19:15:00</a>
+                                    <a href="https://metrograph.com/film/?vista_film_id=9999004239" class="showtime">2025-04-06 16:45:00</a>
                                 
                             </div>
                         </div>
@@ -456,19 +461,19 @@
                     </div>
                 </div>
             
-                <div class="movie flex flex-col h-full items-center max-w-[250px] w-[250px]" id="movie-134">
-                    <img class="image border-black border-6 w-full" src="https://image.tmdb.org/t/p/w200/sVZ9ItjJDZGbFu38Gty6jAEyhJm.jpg" alt="Titane Poster">
-                    <h1 class="movie-title text-3xl font-bold text-center rounded-xs mt-1">Titane</h1>
-                    <button class="showtimes-button text-2xl text-center w-full hover:cursor-pointer mt-auto sm:mt-1 border-black border-1 font-semibold rounded-xs shadow-2xl bg-pink-100">
-                          Showtimes ^
+                <div class="movie" id="movie-20">
+                    <img class="image" src="None" alt="The Luckiest Man in America (Open Captioning) Poster">
+                    <h1 class="movie-title">The Luckiest Man in America (Open Captioning)</h1>
+                    <button class="showtimes-button">
+                        Showtimes ^
                     </button>
-                    <div class="theaters hidden overflow-y-scroll scrollbar border border-black w-full mt-1 rounded-xs scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100 max-h-50 bg-white">
+                    <div class="theaters">
                     
-                        <div class="theater border border-black-100 rounded-xs m-1 bg-pink-100">
-                            <a href="https://metrograph.com/" class="theater underline text-lg font-bold pl-1">Metrograph</a>
-                            <div class="showtimes grid grid-cols-3 gap-2 text-m text-center">
+                        <div class="theater">
+                            <a href="https://www.ifccenter.com/" class="theater">IFC Center</a>
+                            <div class="showtimes">
                                 
-                                    <a href="https://metrograph.com/film/?vista_film_id=9999003303" class="showtime underline text-m">2025-03-31 21:15:00</a>
+                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=489763~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="showtime">2025-04-06 19:30:00</a>
                                 
                             </div>
                         </div>
@@ -476,19 +481,79 @@
                     </div>
                 </div>
             
-                <div class="movie flex flex-col h-full items-center max-w-[250px] w-[250px]" id="movie-24">
-                    <img class="image border-black border-6 w-full" src="https://image.tmdb.org/t/p/w200/jSbFWWbkUq5N5ikewJHNATcWnxS.jpg" alt="Black Narcissus Poster">
-                    <h1 class="movie-title text-3xl font-bold text-center rounded-xs mt-1">Black Narcissus</h1>
-                    <button class="showtimes-button text-2xl text-center w-full hover:cursor-pointer mt-auto sm:mt-1 border-black border-1 font-semibold rounded-xs shadow-2xl bg-pink-100">
-                          Showtimes ^
+                <div class="movie" id="movie-62">
+                    <img class="image" src="https://image.tmdb.org/t/p/w200/9982mkMphAfTGrXbCiOkCwTGVug.jpg" alt="The Wayward Cloud Poster">
+                    <h1 class="movie-title">The Wayward Cloud</h1>
+                    <button class="showtimes-button">
+                        Showtimes ^
                     </button>
-                    <div class="theaters hidden overflow-y-scroll scrollbar border border-black w-full mt-1 rounded-xs scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100 max-h-50 bg-white">
+                    <div class="theaters">
                     
-                        <div class="theater border border-black-100 rounded-xs m-1 bg-pink-100">
-                            <a href="https://metrograph.com/" class="theater underline text-lg font-bold pl-1">Metrograph</a>
-                            <div class="showtimes grid grid-cols-3 gap-2 text-m text-center">
+                        <div class="theater">
+                            <a href="https://metrograph.com/" class="theater">Metrograph</a>
+                            <div class="showtimes">
                                 
-                                    <a href="https://metrograph.com/film/?vista_film_id=9999002347" class="showtime underline text-m">2025-03-31 21:20:00</a>
+                                    <a href="https://metrograph.com/film/?vista_film_id=9999004240" class="showtime">2025-04-06 19:30:00</a>
+                                
+                            </div>
+                        </div>
+                    
+                    </div>
+                </div>
+            
+                <div class="movie" id="movie-57">
+                    <img class="image" src="https://image.tmdb.org/t/p/w200/1qTSeIYJ2cxD1BxddZHN7uOMJ4Y.jpg" alt="Lovers Are Wet Poster">
+                    <h1 class="movie-title">Lovers Are Wet</h1>
+                    <button class="showtimes-button">
+                        Showtimes ^
+                    </button>
+                    <div class="theaters">
+                    
+                        <div class="theater">
+                            <a href="https://metrograph.com/" class="theater">Metrograph</a>
+                            <div class="showtimes">
+                                
+                                    <a href="https://metrograph.com/film/?vista_film_id=9999004238" class="showtime">2025-04-06 20:00:00</a>
+                                
+                            </div>
+                        </div>
+                    
+                    </div>
+                </div>
+            
+                <div class="movie" id="movie-19">
+                    <img class="image" src="None" alt="Eephus (Open Captioning) Poster">
+                    <h1 class="movie-title">Eephus (Open Captioning)</h1>
+                    <button class="showtimes-button">
+                        Showtimes ^
+                    </button>
+                    <div class="theaters">
+                    
+                        <div class="theater">
+                            <a href="https://www.ifccenter.com/" class="theater">IFC Center</a>
+                            <div class="showtimes">
+                                
+                                    <a href="https://tickets.ifccenter.com/websales/pages/ticketsearchcriteria.aspx?evtinfo=489741~8722a542-64c1-4c0b-af02-c3e8a239d769& " class="showtime">2025-04-06 21:15:00</a>
+                                
+                            </div>
+                        </div>
+                    
+                    </div>
+                </div>
+            
+                <div class="movie" id="movie-46">
+                    <img class="image" src="https://image.tmdb.org/t/p/w200/9ar6rxLDB8kagAnXZKn6h9smscr.jpg" alt="Rope Poster">
+                    <h1 class="movie-title">Rope</h1>
+                    <button class="showtimes-button">
+                        Showtimes ^
+                    </button>
+                    <div class="theaters">
+                    
+                        <div class="theater">
+                            <a href="https://metrograph.com/" class="theater">Metrograph</a>
+                            <div class="showtimes">
+                                
+                                    <a href="https://metrograph.com/film/?vista_film_id=9999003530" class="showtime">2025-04-06 22:00:00</a>
                                 
                             </div>
                         </div>
