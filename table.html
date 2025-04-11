@@ -35,6 +35,17 @@
                         window.location.href = `table-${date}.html${query}`;
                     }
                 });
+
+                document.querySelectorAll('.theater-checkbox').forEach(input => {
+                    input.addEventListener('change', () => {
+                        const label = input.closest('label');
+                        if (input.checked) {
+                            label.classList.add('active');
+                        } else {
+                            label.classList.remove('active');
+                        }
+                    });
+                });
             });
 
             function getSelectedTheaters() {
@@ -106,23 +117,23 @@
         <div id="theaters-select" class="theaters-select flex wrap gap-2">
             
                 <label class="theater-select-label px-4 py-2 rounded shadow cursor-pointer border-blue-600 border-2">
-                    <div class="check-wrapper w-full h-full">
-                        <input type="checkbox" class="theater-checkbox invisible w-full h-full" value="Metrograph" checked>
-                        <span class="theater-select-span w-full h-full">Metrograph</span>
+                    <div class="check-wrapper">
+                        <input type="checkbox" class="theater-checkbox invisible hidden" value="Metrograph" checked>
+                        <span class="theater-select-span">Metrograph</span>
                     </div>
                 </label>
             
                 <label class="theater-select-label px-4 py-2 rounded shadow cursor-pointer border-blue-600 border-2">
-                    <div class="check-wrapper w-full h-full">
-                        <input type="checkbox" class="theater-checkbox invisible w-full h-full" value="Quad Cinema" checked>
-                        <span class="theater-select-span w-full h-full">Quad Cinema</span>
+                    <div class="check-wrapper">
+                        <input type="checkbox" class="theater-checkbox invisible hidden" value="Quad Cinema" checked>
+                        <span class="theater-select-span">Quad Cinema</span>
                     </div>
                 </label>
             
                 <label class="theater-select-label px-4 py-2 rounded shadow cursor-pointer border-blue-600 border-2">
-                    <div class="check-wrapper w-full h-full">
-                        <input type="checkbox" class="theater-checkbox invisible w-full h-full" value="IFC Center" checked>
-                        <span class="theater-select-span w-full h-full">IFC Center</span>
+                    <div class="check-wrapper">
+                        <input type="checkbox" class="theater-checkbox invisible hidden" value="IFC Center" checked>
+                        <span class="theater-select-span">IFC Center</span>
                     </div>
                 </label>
             

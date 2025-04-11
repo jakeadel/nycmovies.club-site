@@ -23,28 +23,19 @@ body {
     color: black;
     user-select: none;
     --webkit-user-select: none;
-    position: relative;
     padding: 8px;
-    margin-right: 80px;
+    background-color: white;
 }
 
-.theater-select-label input[type="checkbox"]:checked + .theater-select-span {
+.theater-select-label.active {
     background-color: blue;
     color: white;
 }
 
 .theater-select-span {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
     white-space: nowrap;
     width: fit-content;
-    padding: 8px;
-    background-color: white;
 }
