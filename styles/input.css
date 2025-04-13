@@ -23,12 +23,11 @@ body {
     color: black;
     user-select: none;
     --webkit-user-select: none;
-    padding: 8px;
     background-color: white;
 }
 
 .theater-select-label.active {
-    background-color: blue;
+    background-color: var(--color-blue-600);
     color: white;
 }
 
@@ -38,4 +37,16 @@ body {
     align-items: center;
     white-space: nowrap;
     width: fit-content;
+}
+
+.date-button {
+    background-color: white;
+    border-color: white;
+    color: black;
+}
+
+.date-button.active {
+    background-color: var(--color-blue-600);
+    color: white;
+    border-color: var(--color-blue-600);
 }
