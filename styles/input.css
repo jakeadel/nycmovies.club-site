@@ -50,3 +50,22 @@ body {
     color: white;
     border-color: var(--color-blue-600);
 }
+
+.search-wrapper {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.search-input {
+    padding: 6px;
+    border: white solid 1px;
+}
+
+.search-input.active {
+    border: var(--color-blue-600) 1px solid;
+}
