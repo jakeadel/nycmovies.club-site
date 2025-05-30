@@ -127,9 +127,12 @@
                 startDisplay.textContent = twentyFourToTwelveHour(startText);
                 endDisplay.textContent = twentyFourToTwelveHour(endText);
 
-                const startValue = timeToValue(startText);
-                const endValue = timeToValue(endText);
-                console.log({startValue, endValue});
+                let startValue = timeToValue(startText);
+                let endValue = timeToValue(endText);
+                console.log({startValue, endValue, startText, endText});
+                if (endText === '23:59') {
+                    endValue = 100;
+                }
                 document.getElementById('start-time').value = `${startValue}`;
                 document.getElementById('end-time').value = `${endValue}`;
                 document.getElementById('range-track').style.width = `${endValue - startValue}%`;
