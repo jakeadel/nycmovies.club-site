@@ -10,7 +10,6 @@
                 // Filter from url in case this is a copied link
 
                 const content = document.getElementById('content');
-                console.log({content});
                 content.style.display = 'none';
                 setTimeout(() => content.style.display = '', 0);
 
@@ -29,6 +28,7 @@
                 });
 
                 document.getElementById('search-input').addEventListener('input', (event) => updateSearch(event));
+                document.getElementById('search-cancel').addEventListener('click', () => clearSearch());
 
                 // Get rid of keyboard when the user hits enter
                 document.getElementById('search-input').addEventListener('keydown', function(e) {
@@ -39,15 +39,22 @@
 
                 document.getElementById('date').addEventListener('change', function (e) {
                     const date = e.target.value; // YYYY-MM-DD
+                    console.log({date})
                     document.getElementById('date').classList.add('active');
                     document.getElementById('today').classList.remove('active');
                     document.getElementById('tomorrow').classList.remove('active')
                     addDate(date);
                 });
 
+                // Set min selectable date to today
+                const today = new Date().toISOString().split('T')[0];
+                document.getElementById("date").setAttribute('min', today);
+
                 document.getElementById('today').addEventListener('click', (event) => handleDateButton(event));
                 document.getElementById('tomorrow').addEventListener('click', (event) => handleDateButton(event));
 
+                document.getElementById('start-time').addEventListener('input', (event) => handleTimeInput(event));
+                document.getElementById('end-time').addEventListener('input', (event) => handleTimeInput(event));
                 document.getElementById('start-time').addEventListener('change', (event) => handleTimeChange(event));
                 document.getElementById('end-time').addEventListener('change', (event) => handleTimeChange(event));
 
@@ -78,6 +85,16 @@
                 filterMovies();
             }
 
+            function clearSearch() {
+                const currentUrl = new URL(window.location);
+                currentUrl.searchParams.delete('search');
+                const searchElem = document.getElementById('search-input');
+                searchElem.value = '';
+                searchElem.classList.remove('active');
+                history.replaceState({}, '', currentUrl);
+                filterMovies();
+            }
+
             function initUrlParams() {
                 const currentUrl = new URL(window.location);
                 if (!currentUrl.searchParams.has('date') && !currentUrl.searchParams.has('theaters')) {
@@ -98,18 +115,111 @@
                 }
             }
 
-            function handleTimeChange(event) {
-                console.log({event});
+            function initTime() {
+                const urlParams = new URLSearchParams(window.location.search);
+                const startFromURL = urlParams.get('start-time');
+                const endFromURL = urlParams.get('end-time');
+                const startDisplay = document.getElementById('start-time-display');
+                const endDisplay = document.getElementById('end-time-display');
+ 
+                const startText = startFromURL || '00:00';
+                const endText = endFromURL || '23:59';
+                startDisplay.textContent = twentyFourToTwelveHour(startText);
+                endDisplay.textContent = twentyFourToTwelveHour(endText);
+
+                const startValue = timeToValue(startText);
+                const endValue = timeToValue(endText);
+                console.log({startValue, endValue});
+                document.getElementById('start-time').value = `${startValue}`;
+                document.getElementById('end-time').value = `${endValue}`;
+                document.getElementById('range-track').style.width = `${endValue - startValue}%`;
+
+                if (!startFromURL || !endFromURL) {
+                    addTime('00:00', '23:59');
+                }
+            }
+
+            function twentyFourToTwelveHour(time) {
+                let [hours, minutes] = time.split(':');
+                hours = parseInt(hours);
+                let am = hours < 12;
+                let hoursMod = hours % 12;
+
+                if (hoursMod === 0) {
+                    hoursMod = 12;
+                }
+                if (hours === 24) {
+                    hoursMod = 11;
+                    minutes = 59;
+                }
+                return `${hoursMod < 10 ? '0' : ''}${hoursMod}:${minutes}${am ? 'am' : 'pm'}`;
+            }
+
+            function updateTimeDisplay(startTime, endTime) {
+                if (startTime && endTime) {
+                    const startTimeDisplay = document.getElementById('start-time-display');
+                    const endTimeDisplay = document.getElementById('end-time-display');
+                    startTimeDisplay.textContent = twentyFourToTwelveHour(startTime);
+                    endTimeDisplay.textContent = twentyFourToTwelveHour(endTime);
+                }
+            }
+
+            function handleTimeInput(event) {
                 const start = document.getElementById('start-time');
                 const end = document.getElementById('end-time');
-                console.log(start.value, end.value);
 
+                const range = document.getElementById('range-track');
+
+                const low = Math.min(start.value, end.value);
+                const high = Math.max(start.value, end.value);
+
+                range.style.left = `${low}%`;
+                range.style.right = `${high}%`;
+                range.style.width = `${high - low}%`;
+
+                const lowTime = valueToTime(low);
+                const highTime = valueToTime(high);
+
+                updateTimeDisplay(lowTime, highTime);
+            }
+
+            function handleTimeChange(event) {
+                const start = document.getElementById('start-time');
+                const end = document.getElementById('end-time');
+
+                const low = Math.min(start.value, end.value);
+                const high = Math.max(start.value, end.value);
+
+                const lowTime = valueToTime(low);
+                const highTime = valueToTime(high);
+
+                addTime(lowTime, highTime);
+            }
+
+            function addTime(startTime, endTime) {
+                if (startTime && endTime) {
+                    const url = new URL(window.location);
+
+                    url.searchParams.delete('start-time');
+                    url.searchParams.delete('end-time');
+                    url.searchParams.append('start-time', startTime);
+                    url.searchParams.append('end-time', endTime);
+
+                    history.pushState({}, '', url);
+                }
+                filterMovies();
             }
 
             function valueToTime(value) {
-                const total = Math.floor((value / 100) * 1239);
+                const total = Math.floor((value / 100) * 1440);
                 const hours = Math.floor(total / 60);
-                const minutes = total % 60;
+                const minutes = (total % 60) - (total % 30);
+                return `${hours < 10 ? '0' : ''}${hours}:${minutes}${minutes < 10 ? '0' : ''}`;
+            }
+
+            function timeToValue(time) {
+                const [hours, minutes] = time.split(':');
+                return (((hours * 60) + minutes) / 1440);
             }
 
             function handleDateButton(event) {
@@ -138,6 +248,7 @@
                     const mm = String(targetDate.getMonth() + 1).padStart(2, '0');
                     const dd = String(targetDate.getDate()).padStart(2, '0');
                     const formatted = `${yyyy}-${mm}-${dd}`;
+                    document.getElementById('date').value = formatted;
                     addDate(formatted);
                 }
             }
@@ -152,21 +263,7 @@
                 }
                 filterMovies();
             }
-
-            function addTime(startTime, endTime) {
-                console.log({startTime, endTime})
-                if (startTime && endTime) {
-                    const url = new URL(window.location);
-
-                    url.searchParams.delete('start-time');
-                    url.searchParams.delete('end-time');
-                    url.searchParams.append('start-time', startTime);
-                    url.searchParams.append('end-time', endTime);
-                    history.pushState({}, '', url);
-                }
-                filterMovies();
-            }
-
+            
             function getSelectedTheaters() {
                 return Array.from(document.querySelectorAll('.theater-checkbox:checked')).map((box) => box.value).join(',');
             }
@@ -182,23 +279,6 @@
                 }
                 else {
                     searchInput.classList.remove('active');
-                }
-            }
-
-            function initTime() {
-                const urlParams = new URLSearchParams(window.location.search);
-                const startFromURL = urlParams.get('start-time');
-                const endFromURL = urlParams.get('end-time');
-                const startBtn = document.getElementById('start-time');
-                const endBtn = document.getElementById('end-time');
-                console.log({startFromURL})
-
-                // Use values from URL if present, otherwise default to start=00:00, end=23:59
-                startBtn.value = startFromURL || '00:00';
-                endBtn.value = endFromURL || '23:59';
-
-                if (!startFromURL || !endFromURL) {
-                    addTime('00:00', '23:59');
                 }
             }
 
@@ -243,7 +323,6 @@
                 }
             }
 
-
             function initChecks() {
                 const urlParams = new URLSearchParams(window.location.search);
                 const theatersFromURL = urlParams.get('theaters') ? urlParams.get('theaters').split(',') : [];
@@ -276,11 +355,38 @@
                 history.pushState({}, '', url);
             }
 
+            // 0 = EQ, 1 = LEQ, 2 = GEQ
+            function showtimeCompTime(showtime, time) {
+                const [showHour, showMinutes, temp] = showtime.split(':').map((str) => parseInt(str));
+                const [hour, minutes] = time.split(':').map((str) => (parseInt(str)));
+                if (showHour === hour && showMinutes === minutes) {
+                    return 0;
+                }
+                else if (showHour < hour || (showHour === hour && showMinutes <= minutes)) {
+                    return 1;
+                }
+                else {
+                    return 2;
+                }
+            }
+
+
+            function isValidTime(startTime, endTime, showtime) {
+                if ([0, 2].includes(showtimeCompTime(showtime, startTime)) &&
+                    [0, 1].includes(showtimeCompTime(showtime, endTime))) {
+
+                    return true;
+                }
+                return false;
+            }
+
             function filterMovies() {
                 const urlParams = new URLSearchParams(document.location.search);
                 const theatersParam = urlParams.get("theaters");
                 const dateParam = urlParams.get("date");
                 const searchParam = urlParams.get("search")?.toLowerCase() || '';
+                const startTimeParam = urlParams.get("start-time");
+                const endTimeParam = urlParams.get("end-time");
 
                 if (theatersParam === null && dateParam === null) {
                     return;
@@ -302,10 +408,12 @@
 
                             if (isTheaterVisible) {
                                 theater.querySelectorAll('.showtime').forEach((showtime) => {
-                                    const showtimeDate = showtime.dataset.date.split(' ')[0]; // get just yyyy-mm-dd
+                                    const [showtimeDate, showtimeTime] = showtime.dataset.date.split(' '); // get just yyyy-mm-dd
                                     const matchesDate = showtimeDate === dateParam;
-                                    showtime.style.display = matchesDate ? '' : 'none';
-                                    if (matchesDate) {
+                                    const matchesTime = isValidTime(startTimeParam, endTimeParam, showtimeTime);
+
+                                    showtime.style.display = (matchesDate && matchesTime) ? '' : 'none';
+                                    if (matchesDate && matchesTime) {
                                         hasValidShowtime = true;
                                     }
                                 });
@@ -337,17 +445,19 @@
         </div>
         <div id="time-select-wrapper" class="flex flex-col items-center justify-center mt-2 text-center ml-auto mr-auto w-auto">
             <div id="time-display" class="flex flex-row justify-center items-center gap-2">
-                <input type="time" value="12:00" class="bg-white text-sm px-2 py-1 rounded">
-                <div> - </div>
-                <input type="time" value="13:00" class="bg-white text-sm px-2 py-1 rounded">
+                <span id="start-time-display" class="bg-white pointer-events-none text-sm px-2 py-1 rounded">12:00</span>
+                <div class="pointer-events-none"> - </div>
+                <span id="end-time-display" class="bg-white pointer-events-none text-sm px-2 py-1 rounded">12:00</span>
             </div>
             <div id="time-slider" class="relative appearance-none w-[200px] h-6 max-w-md mx-auto mt-2 mb-2">
                 <div id="range-track" class="absolute appearance-none h-1 z-2 mt-[6px] w-full bg-blue-500 rounded transform"></div>
                 <div id="range-track-under" class="absolute appearance-none h-1 z-1 mt-[6px] w-full bg-gray-500 rounded transform"></div>
-                <input type="range" id="start-time" min="0" max="100" value="0" step="2"
-                    class="absolute w-full pointer-events-none appearance-none bg-transparent z-30 left-0">
+                <input type="range" id="start-time" min="0" max="100" value="0" default="0" step="2"
+                    class="absolute w-full pointer-events-none appearance-none bg-transparent z-30 left-0"
+                >
                 <input type="range" id="end-time" min="0" max="100" value="100" step="2"
-                    class="absolute w-full pointer-events-none appearance-none bg-transparent z-20 left-0">
+                    class="absolute w-full pointer-events-none appearance-none bg-transparent z-20 left-0"
+                >
             </div>
         </div>
         <div id="theaters-select" class="theaters-select flex flex-row items-center justify-center gap-2 mt-4 text-center">
@@ -374,9 +484,11 @@
                 </label>
             
         </div>
-        <div id="search-wrapper" class="search-wrapper text-sm px-3 text-sm py-1 mt-4">
-            <input id="search-input" class="search-input rounded-lg" inputmode="search" enterkeyhint="done" type="text" placeholder="Search here">
-            <button id="search-cancel" class="search-cancel cursor-pointer">Clear</button> 
+        <div id="search-wrapper" class="search-wrapper text-sm px-1 text-sm mt-4 rounded-lg bg-white">
+            <input id="search-input" class="search-input" inputmode="search" enterkeyhint="done" type="text" placeholder="Search here">
+            <button id="search-cancel" title="Clear" class="search-cancel cursor-pointer">
+                <svg class="w-full h-[24px]" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+            </button>
         </div>
         <div id="content" class="content px-4 py-6 grid md:grid-cols-2 lg:grid-cols-2 grid-cols-1 justify-center items-center gap-4">
         
