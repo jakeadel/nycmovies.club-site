@@ -1,0 +1,526 @@
+<html lang="en">
+    <head>
+        <title>NYC MOVIES</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="styles/style.css" rel="stylesheet">
+    </head>
+    <body class="bg-gray-100">
+        <div class="header p-4">
+            <h1 class="page-title font-bold text-center text-5xl bg-red-100 py-4"><a href="https://nycmovies.club">NYC MOVIES . CLUB</a></h1>
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-center gap-2 mt-4 text-center">
+                <div>
+                    <label for="startDate">Start Date:</label>
+                    <input type="date" id="startDate" class="border rounded px-2 py-1">
+                </div>
+                <div>
+                    <label for="endDate">End Date:</label>
+                    <input type="date" id="endDate" class="border rounded px-2 py-1">
+                </div>
+            </div>
+        </div>
+
+        <div class="content px-4 py-6 grid md:grid-cols-2 grid-cols-1 justify-center items-center gap-4">
+
+            <div class="movie-wrapper max-w-full">
+               <div class="movie max-w-2xl ml-auto mr-auto flex flex-row overflow-hidden justify-center items-center movie w-full bg-white shadow-md hover:shadow-2xl transition-shadow duration-300">
+
+                    <div class="image-wrapper sm:h-auto sm:flex-shrink-0 mt-auto mb-auto">
+                        <img class="object-cover" 
+                            src="https://image.tmdb.org/t/p/w200/axtvB6qoORMZQ2qPZdaFcBOM8g3.jpg" 
+                            alt="Poster">
+                    </div>
+
+                    <!-- Movie Details & Showtimes (Right) -->
+                    <div class="details p-4 flex-1 flex flex-col">
+                        <!-- Title & Metadata -->
+                        <div class="mb-3">
+                            <div class="title text-2xl font-semibold text-gray-800">Swingers</div>
+                            <div class="text-sm text-gray-600 mt-2">
+                                <div>Director: <span class="text-gray-800 font-medium">Jon Favreau</span></div>
+                                <div>Runtime: <span class="text-gray-800 font-medium">2:10</span></div>
+                            </div>
+                        </div>
+
+                        <!-- Divider -->
+                        <div class="border-t border-gray-300 my-2"></div>
+
+                        <!-- Showtimes -->
+                        <div class="flex flex-col gap-3">
+                            <div class="text-sm font-medium text-gray-600">Showtimes</div>
+
+                            <div>
+                                <div class="text-xs font-semibold text-gray-700">AMC Times Square</div>
+                                <div class="flex flex-wrap gap-2 mt-1">
+                                    <button class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">7:00pm</button>
+                                    <button class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">9:30pm</button>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="text-xs font-semibold text-gray-700">Regal Union Square</div>
+                                <div class="flex flex-wrap gap-2 mt-1">
+                                    <button class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">8:00pm</button>
+                                    <button class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">10:15pm</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <button class="w-full text-center text-blue-600 text-sm font-medium py-2 border border-blue-600 rounded-lg hover:bg-blue-50 transition">
+                                See showtimes for all dates
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <div class="movie w-full max-w-3xl bg-white shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col sm:flex-row overflow-hidden">
+                
+               <div class="sm:h-auto sm:flex-shrink-0">
+                    <img class="h-full object-cover" 
+                        src="https://image.tmdb.org/t/p/w200/axtvB6qoORMZQ2qPZdaFcBOM8g3.jpg" 
+                        alt="Poster">
+                </div> 
+
+                <!-- Movie Details & Showtimes (Right) -->
+                <div class="p-4 flex-1 flex flex-col">
+                    <!-- Title & Metadata -->
+                    <div class="mb-3">
+                        <div class="title text-2xl font-semibold text-gray-800">Swingers</div>
+                        <div class="text-sm text-gray-600 mt-2">
+                            <div>Director: <span class="text-gray-800 font-medium">Jon Favreau</span></div>
+                            <div>Runtime: <span class="text-gray-800 font-medium">2:10</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Divider -->
+                    <div class="border-t border-gray-300 my-2"></div>
+
+                    <!-- Showtimes -->
+                    <div class="flex flex-col gap-3">
+                        <div class="text-sm font-medium text-gray-600">Showtimes</div>
+
+                        <div>
+                            <div class="text-xs font-semibold text-gray-700">AMC Times Square</div>
+                            <div class="flex flex-wrap gap-2 mt-1">
+                                <button class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">7:00pm</button>
+                                <button class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">9:30pm</button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="text-xs font-semibold text-gray-700">Regal Union Square</div>
+                            <div class="flex flex-wrap gap-2 mt-1">
+                                <button class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">8:00pm</button>
+                                <button class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">10:15pm</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <button class="w-full text-center text-blue-600 text-sm font-medium py-2 border border-blue-600 rounded-lg hover:bg-blue-50 transition">
+                            See showtimes for all dates
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="movie w-full max-w-3xl bg-white shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col sm:flex-row overflow-hidden">
+                
+               <div class="sm:h-auto sm:flex-shrink-0">
+                    <img class="h-full object-cover" 
+                        src="https://image.tmdb.org/t/p/w200/axtvB6qoORMZQ2qPZdaFcBOM8g3.jpg" 
+                        alt="Poster">
+                </div> 
+
+                <!-- Movie Details & Showtimes (Right) -->
+                <div class="p-4 flex-1 flex flex-col">
+                    <!-- Title & Metadata -->
+                    <div class="mb-3">
+                        <div class="title text-2xl font-semibold text-gray-800">Swingers</div>
+                        <div class="text-sm text-gray-600 mt-2">
+                            <div>Director: <span class="text-gray-800 font-medium">Jon Favreau</span></div>
+                            <div>Runtime: <span class="text-gray-800 font-medium">2:10</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Divider -->
+                    <div class="border-t border-gray-300 my-2"></div>
+
+                    <!-- Showtimes -->
+                    <div class="flex flex-col gap-3">
+                        <div class="text-sm font-medium text-gray-600">Showtimes</div>
+
+                        <div>
+                            <div class="text-xs font-semibold text-gray-700">AMC Times Square</div>
+                            <div class="flex flex-wrap gap-2 mt-1">
+                                <button class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">7:00pm</button>
+                                <button class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">9:30pm</button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="text-xs font-semibold text-gray-700">Regal Union Square</div>
+                            <div class="flex flex-wrap gap-2 mt-1">
+                                <button class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">8:00pm</button>
+                                <button class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">10:15pm</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <button class="w-full text-center text-blue-600 text-sm font-medium py-2 border border-blue-600 rounded-lg hover:bg-blue-50 transition">
+                            See showtimes for all dates
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="movie w-full max-w-3xl bg-white shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col sm:flex-row overflow-hidden">
+                
+               <div class="sm:h-auto sm:flex-shrink-0">
+                    <img class="h-full object-cover" 
+                        src="https://image.tmdb.org/t/p/w200/axtvB6qoORMZQ2qPZdaFcBOM8g3.jpg" 
+                        alt="Poster">
+                </div> 
+
+                <!-- Movie Details & Showtimes (Right) -->
+                <div class="p-4 flex-1 flex flex-col">
+                    <!-- Title & Metadata -->
+                    <div class="mb-3">
+                        <div class="title text-2xl font-semibold text-gray-800">Swingers</div>
+                        <div class="text-sm text-gray-600 mt-2">
+                            <div>Director: <span class="text-gray-800 font-medium">Jon Favreau</span></div>
+                            <div>Runtime: <span class="text-gray-800 font-medium">2:10</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Divider -->
+                    <div class="border-t border-gray-300 my-2"></div>
+
+                    <!-- Showtimes -->
+                    <div class="flex flex-col gap-3">
+                        <div class="text-sm font-medium text-gray-600">Showtimes</div>
+
+                        <div>
+                            <div class="text-xs font-semibold text-gray-700">AMC Times Square</div>
+                            <div class="flex flex-wrap gap-2 mt-1">
+                                <button class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">7:00pm</button>
+                                <button class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">9:30pm</button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="text-xs font-semibold text-gray-700">Regal Union Square</div>
+                            <div class="flex flex-wrap gap-2 mt-1">
+                                <button class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">8:00pm</button>
+                                <button class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">10:15pm</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <button class="w-full text-center text-blue-600 text-sm font-medium py-2 border border-blue-600 rounded-lg hover:bg-blue-50 transition">
+                            See showtimes for all dates
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="movie w-full max-w-3xl bg-white shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col sm:flex-row overflow-hidden">
+                
+               <div class="sm:h-auto sm:flex-shrink-0">
+                    <img class="h-full object-cover" 
+                        src="https://image.tmdb.org/t/p/w200/axtvB6qoORMZQ2qPZdaFcBOM8g3.jpg" 
+                        alt="Poster">
+                </div> 
+
+                <!-- Movie Details & Showtimes (Right) -->
+                <div class="p-4 flex-1 flex flex-col">
+                    <!-- Title & Metadata -->
+                    <div class="mb-3">
+                        <div class="title text-2xl font-semibold text-gray-800">Swingers</div>
+                        <div class="text-sm text-gray-600 mt-2">
+                            <div>Director: <span class="text-gray-800 font-medium">Jon Favreau</span></div>
+                            <div>Runtime: <span class="text-gray-800 font-medium">2:10</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Divider -->
+                    <div class="border-t border-gray-300 my-2"></div>
+
+                    <!-- Showtimes -->
+                    <div class="flex flex-col gap-3">
+                        <div class="text-sm font-medium text-gray-600">Showtimes</div>
+
+                        <div>
+                            <div class="text-xs font-semibold text-gray-700">AMC Times Square</div>
+                            <div class="flex flex-wrap gap-2 mt-1">
+                                <button class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">7:00pm</button>
+                                <button class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">9:30pm</button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="text-xs font-semibold text-gray-700">Regal Union Square</div>
+                            <div class="flex flex-wrap gap-2 mt-1">
+                                <button class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">8:00pm</button>
+                                <button class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">10:15pm</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <button class="w-full text-center text-blue-600 text-sm font-medium py-2 border border-blue-600 rounded-lg hover:bg-blue-50 transition">
+                            See showtimes for all dates
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="movie w-full max-w-3xl bg-white shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col sm:flex-row overflow-hidden">
+                
+               <div class="sm:h-auto sm:flex-shrink-0">
+                    <img class="h-full object-cover" 
+                        src="https://image.tmdb.org/t/p/w200/axtvB6qoORMZQ2qPZdaFcBOM8g3.jpg" 
+                        alt="Poster">
+                </div> 
+
+                <!-- Movie Details & Showtimes (Right) -->
+                <div class="p-4 flex-1 flex flex-col">
+                    <!-- Title & Metadata -->
+                    <div class="mb-3">
+                        <div class="title text-2xl font-semibold text-gray-800">Swingers</div>
+                        <div class="text-sm text-gray-600 mt-2">
+                            <div>Director: <span class="text-gray-800 font-medium">Jon Favreau</span></div>
+                            <div>Runtime: <span class="text-gray-800 font-medium">2:10</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Divider -->
+                    <div class="border-t border-gray-300 my-2"></div>
+
+                    <!-- Showtimes -->
+                    <div class="flex flex-col gap-3">
+                        <div class="text-sm font-medium text-gray-600">Showtimes</div>
+
+                        <div>
+                            <div class="text-xs font-semibold text-gray-700">AMC Times Square</div>
+                            <div class="flex flex-wrap gap-2 mt-1">
+                                <button class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">7:00pm</button>
+                                <button class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">9:30pm</button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="text-xs font-semibold text-gray-700">Regal Union Square</div>
+                            <div class="flex flex-wrap gap-2 mt-1">
+                                <button class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">8:00pm</button>
+                                <button class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">10:15pm</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <button class="w-full text-center text-blue-600 text-sm font-medium py-2 border border-blue-600 rounded-lg hover:bg-blue-50 transition">
+                            See showtimes for all dates
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="movie w-full max-w-3xl bg-white shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col sm:flex-row overflow-hidden">
+                
+               <div class="sm:h-auto sm:flex-shrink-0">
+                    <img class="h-full object-cover" 
+                        src="https://image.tmdb.org/t/p/w200/axtvB6qoORMZQ2qPZdaFcBOM8g3.jpg" 
+                        alt="Poster">
+                </div> 
+
+                <!-- Movie Details & Showtimes (Right) -->
+                <div class="p-4 flex-1 flex flex-col">
+                    <!-- Title & Metadata -->
+                    <div class="mb-3">
+                        <div class="title text-2xl font-semibold text-gray-800">Swingers</div>
+                        <div class="text-sm text-gray-600 mt-2">
+                            <div>Director: <span class="text-gray-800 font-medium">Jon Favreau</span></div>
+                            <div>Runtime: <span class="text-gray-800 font-medium">2:10</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Divider -->
+                    <div class="border-t border-gray-300 my-2"></div>
+
+                    <!-- Showtimes -->
+                    <div class="flex flex-col gap-3">
+                        <div class="text-sm font-medium text-gray-600">Showtimes</div>
+
+                        <div>
+                            <div class="text-xs font-semibold text-gray-700">AMC Times Square</div>
+                            <div class="flex flex-wrap gap-2 mt-1">
+                                <button class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">7:00pm</button>
+                                <button class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">9:30pm</button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="text-xs font-semibold text-gray-700">Regal Union Square</div>
+                            <div class="flex flex-wrap gap-2 mt-1">
+                                <button class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">8:00pm</button>
+                                <button class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">10:15pm</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <button class="w-full text-center text-blue-600 text-sm font-medium py-2 border border-blue-600 rounded-lg hover:bg-blue-50 transition">
+                            See showtimes for all dates
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="movie w-full max-w-3xl bg-white shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col sm:flex-row overflow-hidden">
+                
+               <div class="sm:h-auto sm:flex-shrink-0">
+                    <img class="h-full object-cover" 
+                        src="https://image.tmdb.org/t/p/w200/axtvB6qoORMZQ2qPZdaFcBOM8g3.jpg" 
+                        alt="Poster">
+                </div> 
+
+                <!-- Movie Details & Showtimes (Right) -->
+                <div class="p-4 flex-1 flex flex-col">
+                    <!-- Title & Metadata -->
+                    <div class="mb-3">
+                        <div class="title text-2xl font-semibold text-gray-800">Swingers</div>
+                        <div class="text-sm text-gray-600 mt-2">
+                            <div>Director: <span class="text-gray-800 font-medium">Jon Favreau</span></div>
+                            <div>Runtime: <span class="text-gray-800 font-medium">2:10</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Divider -->
+                    <div class="border-t border-gray-300 my-2"></div>
+
+                    <!-- Showtimes -->
+                    <div class="flex flex-col gap-3">
+                        <div class="text-sm font-medium text-gray-600">Showtimes</div>
+
+                        <div>
+                            <div class="text-xs font-semibold text-gray-700">AMC Times Square</div>
+                            <div class="flex flex-wrap gap-2 mt-1">
+                                <button class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">7:00pm</button>
+                                <button class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">9:30pm</button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="text-xs font-semibold text-gray-700">Regal Union Square</div>
+                            <div class="flex flex-wrap gap-2 mt-1">
+                                <button class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">8:00pm</button>
+                                <button class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">10:15pm</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <button class="w-full text-center text-blue-600 text-sm font-medium py-2 border border-blue-600 rounded-lg hover:bg-blue-50 transition">
+                            See showtimes for all dates
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="movie w-full max-w-3xl bg-white shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col sm:flex-row overflow-hidden">
+                
+               <div class="sm:h-auto sm:flex-shrink-0">
+                    <img class="h-full object-cover" 
+                        src="https://image.tmdb.org/t/p/w200/axtvB6qoORMZQ2qPZdaFcBOM8g3.jpg" 
+                        alt="Poster">
+                </div> 
+
+                <!-- Movie Details & Showtimes (Right) -->
+                <div class="p-4 flex-1 flex flex-col">
+                    <!-- Title & Metadata -->
+                    <div class="mb-3">
+                        <div class="title text-2xl font-semibold text-gray-800">Swingers</div>
+                        <div class="text-sm text-gray-600 mt-2">
+                            <div>Director: <span class="text-gray-800 font-medium">Jon Favreau</span></div>
+                            <div>Runtime: <span class="text-gray-800 font-medium">2:10</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Divider -->
+                    <div class="border-t border-gray-300 my-2"></div>
+
+                    <!-- Showtimes -->
+                    <div class="flex flex-col gap-3">
+                        <div class="text-sm font-medium text-gray-600">Showtimes</div>
+
+                        <div>
+                            <div class="text-xs font-semibold text-gray-700">AMC Times Square</div>
+                            <div class="flex flex-wrap gap-2 mt-1">
+                                <button class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">7:00pm</button>
+                                <button class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">9:30pm</button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="text-xs font-semibold text-gray-700">Regal Union Square</div>
+                            <div class="flex flex-wrap gap-2 mt-1">
+                                <button class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">8:00pm</button>
+                                <button class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">10:15pm</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <button class="w-full text-center text-blue-600 text-sm font-medium py-2 border border-blue-600 rounded-lg hover:bg-blue-50 transition">
+                            See showtimes for all dates
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="movie w-full max-w-3xl bg-white shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col sm:flex-row overflow-hidden">
+                
+               <div class="sm:h-auto sm:flex-shrink-0">
+                    <img class="h-full object-cover" 
+                        src="https://image.tmdb.org/t/p/w200/axtvB6qoORMZQ2qPZdaFcBOM8g3.jpg" 
+                        alt="Poster">
+                </div> 
+
+                <!-- Movie Details & Showtimes (Right) -->
+                <div class="p-4 flex-1 flex flex-col">
+                    <!-- Title & Metadata -->
+                    <div class="mb-3">
+                        <div class="title text-2xl font-semibold text-gray-800">Swingers</div>
+                        <div class="text-sm text-gray-600 mt-2">
+                            <div>Director: <span class="text-gray-800 font-medium">Jon Favreau</span></div>
+                            <div>Runtime: <span class="text-gray-800 font-medium">2:10</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Divider -->
+                    <div class="border-t border-gray-300 my-2"></div>
+
+                    <!-- Showtimes -->
+                    <div class="flex flex-col gap-3">
+                        <div class="text-sm font-medium text-gray-600">Showtimes</div>
+
+                        <div>
+                            <div class="text-xs font-semibold text-gray-700">AMC Times Square</div>
+                            <div class="flex flex-wrap gap-2 mt-1">
+                                <button class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">7:00pm</button>
+                                <button class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">9:30pm</button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="text-xs font-semibold text-gray-700">Regal Union Square</div>
+                            <div class="flex flex-wrap gap-2 mt-1">
+                                <button class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">8:00pm</button>
+                                <button class="bg-blue-600 text-white text-sm px-3 py-1 rounded-lg hover:bg-blue-700 transition">10:15pm</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <button class="w-full text-center text-blue-600 text-sm font-medium py-2 border border-blue-600 rounded-lg hover:bg-blue-50 transition">
+                            See showtimes for all dates
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
+<!--Maybe not a table, but at least a nice list view-->
+<!--Maybe if you hover, the image displays-->
+<!--For SEO, need a page for each theater-->
+<!--Maybe for nyc neighborhoods as well-->
+<!--Spreadsheet pretty terrible for mobile-->
+<!--Mobile design is probably the most important thing-->

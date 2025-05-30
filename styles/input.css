@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+:root {
+    --main: hsl(0, 0%, 90%);
+    --second: hsl(0, 0%, 90%);
+    --third: hsl(0, 0%, 90%);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+    --main: hsl(19, 94%, 80%);
+    --second: hsl(0, 0%, 90%);
+    --third: hsl(0, 0%, 90%);
+    }
+}
+
+body {
+    background-color: var(--main);
+}
+
+.theater-select-label {
+    display: inline-block;
+    color: black;
+    user-select: none;
+    --webkit-user-select: none;
+    background-color: white;
+}
+
+.theater-select-label.active {
+    background-color: var(--color-blue-600) !important;
+    color: white !important;
+}
+
+.theater-select-span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.date-button {
+    background-color: white;
+    border-color: white;
+    color: black;
+}
+
+.date-button.active {
+    background-color: var(--color-blue-600);
+    color: white;
+    border-color: var(--color-blue-600);
+}
+
+.search-wrapper {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.search-input {
+    padding: 6px;
+    border: white solid 1px;
+}
+
+.search-input.active {
+    border: var(--color-blue-600) 1px solid;
+}
+
+.showtime {
+    transition: ease-in-out 0.2s;
+    cursor: pointer;
+}
+
+.showtime:hover {
+    left: 0 !important;
+    right: 0 !important;
+    opacity: 1 !important;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 9999px;
+    background: #2563eb;
+    cursor: pointer;
+    pointer-events: all;
+    position: relative;
+    z-index: 50;
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 9999px;
+    background: #2563eb;
+    cursor: pointer;
+    pointer-events: all;
+    position: relative;
+    z-index: 50;
+}
