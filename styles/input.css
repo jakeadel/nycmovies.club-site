@@ -8,9 +8,9 @@
 
 @media (prefers-color-scheme: dark) {
     :root {
-    --main: hsl(19, 94%, 80%);
-    --second: hsl(0, 0%, 90%);
-    --third: hsl(0, 0%, 90%);
+    --main: hsl(20, 98%, 83%);
+    --second: hsl(0, 34%, 34%);
+    --third: hsl(0, 46%, 8%);
     }
 }
 
